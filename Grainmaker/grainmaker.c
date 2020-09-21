@@ -32,14 +32,8 @@ void *grainmaker_tilde_new(t_symbol *s) {
     
     x->x_arrayname = s;
     x->x_vec = 0;
-    outlet_new(&x->x_obj, gensym("signal"));
     x->t_f = 0;
-//    x->in_sample = inlet_new(&x->x_obj, &x->x_obj.ob_pd, &s_list, gensym("sample"));
-
-//    x->out_A = outlet_new(&x->x_obj, &s_bang);
-//    x->out_B = outlet_new(&x->x_obj, &s_bang);
-//    x->out_synch = outlet_new(&x->x_obj, &s_bang);
-//    x->out_count = outlet_new(&x->x_obj, &s_float);
+    outlet_new(&x->x_obj, gensym("signal"));
     
     return (void *)x;
 }
@@ -84,27 +78,23 @@ static t_int *grainmaker_tilde_perform(t_int *w)
 
 void grainmaker_tilde_free(t_grainmaker_tilde *x) {
 
-//    outlet_free(x->out_A);
-//    outlet_free(x->out_B);
-//    outlet_free(x->out_synch);
-//    outlet_free(x->out_count);
 }
 
 static void grainmaker_tilde_set(t_grainmaker_tilde *x, t_symbol *s)
 {
+    // Copied from tabread~ external
     t_garray *a;
-
     x->x_arrayname = s;
     
     if (!(a = (t_garray *)pd_findbyclass(x->x_arrayname, garray_class)))
     {
         if (*s->s_name)
-            pd_error(x, "tabread~: %s: no such array", x->x_arrayname->s_name);
+            pd_error(x, "grainmaker~: %s: no such array", x->x_arrayname->s_name);
         x->x_vec = 0;
     }
     else if (!garray_getfloatwords(a, &x->x_npoints, &x->x_vec))
     {
-        pd_error(x, "%s: bad template for tabread~", x->x_arrayname->s_name);
+        pd_error(x, "%s: bad template for grainmaker~", x->x_arrayname->s_name);
         x->x_vec = 0;
     }
     else garray_usedindsp(a);
@@ -113,10 +103,10 @@ static void grainmaker_tilde_set(t_grainmaker_tilde *x, t_symbol *s)
 static void grainmaker_tilde_dsp(t_grainmaker_tilde *x, t_signal **sp)
 {
     grainmaker_tilde_set(x, x->x_arrayname);
-
     dsp_add(grainmaker_tilde_perform, 4, x,
-        sp[0]->s_vec, sp[1]->s_vec, sp[0]->s_n);
-
+            sp[0]->s_vec,
+            sp[1]->s_vec,
+            sp[0]->s_n);
 }
 
 void grainmaker_tilde_setup(void) {
