@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		D051029624F7BD9F000B325E /* m_pd.h in Headers */ = {isa = PBXBuildFile; fileRef = D051029524F7BD9F000B325E /* m_pd.h */; };
 		D051029824F7BF46000B325E /* grainmaker.c in Sources */ = {isa = PBXBuildFile; fileRef = D051029724F7BF46000B325E /* grainmaker.c */; };
+		D0E915462518D4EE00FF61AC /* grain_scheduler.h in Headers */ = {isa = PBXBuildFile; fileRef = D0E915442518D4EE00FF61AC /* grain_scheduler.h */; };
+		D0E915472518D4EE00FF61AC /* grain_scheduler.c in Sources */ = {isa = PBXBuildFile; fileRef = D0E915452518D4EE00FF61AC /* grain_scheduler.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,6 +19,8 @@
 		D051029524F7BD9F000B325E /* m_pd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = m_pd.h; sourceTree = "<group>"; };
 		D051029724F7BF46000B325E /* grainmaker.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = grainmaker.c; sourceTree = "<group>"; };
 		D0E9154325178A7A00FF61AC /* tabread.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = tabread.c; sourceTree = "<group>"; };
+		D0E915442518D4EE00FF61AC /* grain_scheduler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = grain_scheduler.h; sourceTree = "<group>"; };
+		D0E915452518D4EE00FF61AC /* grain_scheduler.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = grain_scheduler.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,8 @@
 		D051028524F7BB66000B325E = {
 			isa = PBXGroup;
 			children = (
+				D0E915442518D4EE00FF61AC /* grain_scheduler.h */,
+				D0E915452518D4EE00FF61AC /* grain_scheduler.c */,
 				D0E9154325178A7A00FF61AC /* tabread.c */,
 				D040DD9B24FE4E5C0074FAD5 /* grainmaker_old.c */,
 				D051029724F7BF46000B325E /* grainmaker.c */,
@@ -56,6 +62,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0E915462518D4EE00FF61AC /* grain_scheduler.h in Headers */,
 				D051029624F7BD9F000B325E /* m_pd.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,6 +125,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D051029824F7BF46000B325E /* grainmaker.c in Sources */,
+				D0E915472518D4EE00FF61AC /* grain_scheduler.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
