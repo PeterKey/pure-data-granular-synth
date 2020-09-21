@@ -13,9 +13,10 @@
 
 /* Begin PBXFileReference section */
 		D040DD9B24FE4E5C0074FAD5 /* grainmaker_old.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = grainmaker_old.c; sourceTree = "<group>"; };
-		D051028E24F7BB66000B325E /* grainmaker.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = grainmaker.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
+		D051028E24F7BB66000B325E /* grainmaker~.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = "grainmaker~.pd_darwin"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D051029524F7BD9F000B325E /* m_pd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = m_pd.h; sourceTree = "<group>"; };
 		D051029724F7BF46000B325E /* grainmaker.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = grainmaker.c; sourceTree = "<group>"; };
+		D0E9154325178A7A00FF61AC /* tabread.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = tabread.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +33,7 @@
 		D051028524F7BB66000B325E = {
 			isa = PBXGroup;
 			children = (
+				D0E9154325178A7A00FF61AC /* tabread.c */,
 				D040DD9B24FE4E5C0074FAD5 /* grainmaker_old.c */,
 				D051029724F7BF46000B325E /* grainmaker.c */,
 				D051029524F7BD9F000B325E /* m_pd.h */,
@@ -42,7 +44,7 @@
 		D051028F24F7BB66000B325E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D051028E24F7BB66000B325E /* grainmaker.pd_darwin */,
+				D051028E24F7BB66000B325E /* grainmaker~.pd_darwin */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -75,7 +77,7 @@
 			);
 			name = Grainmaker;
 			productName = Grainmaker;
-			productReference = D051028E24F7BB66000B325E /* grainmaker.pd_darwin */;
+			productReference = D051028E24F7BB66000B325E /* grainmaker~.pd_darwin */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
 /* End PBXNativeTarget section */
@@ -249,7 +251,7 @@
 					"-undefined",
 					dynamic_lookup,
 				);
-				PRODUCT_NAME = grainmaker;
+				PRODUCT_NAME = "grainmaker~";
 				SKIP_INSTALL = NO;
 			};
 			name = Debug;
@@ -266,7 +268,7 @@
 					"-undefined",
 					dynamic_lookup,
 				);
-				PRODUCT_NAME = grainmaker;
+				PRODUCT_NAME = "grainmaker~";
 				SKIP_INSTALL = NO;
 			};
 			name = Release;
