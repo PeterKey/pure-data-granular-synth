@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include "grain_scheduler.h"
-
+#include "grain.h"
 
 grain_scheduler *grain_scheduler_new(t_word *sample, int sample_length) {
     grain_scheduler *x = (grain_scheduler *)malloc(sizeof(grain_scheduler));
