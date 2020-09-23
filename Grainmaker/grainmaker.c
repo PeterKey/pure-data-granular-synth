@@ -8,25 +8,28 @@
 
 #include "m_pd.h"
 #include "stdlib.h"
+#include "grain_scheduler.h"
 
 static t_class *grainmaker_tilde_class;
 
 typedef struct _grainmaker_tilde {
-    t_object    x_obj;
-    t_word      *x_vec;
-    int         x_npoints;
-    t_symbol    *x_arrayname;
-    t_float     f;
+    t_object        x_obj;
+    t_word          *x_sample;
+    int             x_sample_length,
+                    offset,
+                    num_grains,
+                    grain_length;
+
+    t_symbol        *x_arrayname;
+    t_float         f;
     
-    t_int       offset,
-                num_grains,
-                grain_length;
+    grain_scheduler *x_scheduler;
     
-    t_inlet     *in_offset,
-                *in_num_grains,
-                *in_grain_length;
+    t_inlet         *in_offset,
+                    *in_num_grains,
+                    *in_grain_length;
     
-    t_outlet    *out;
+    t_outlet        *out;
     
 //    t_int       offset, grain_length;
 //    t_float     head_pos, playback_speed;
@@ -37,11 +40,12 @@ typedef struct _grainmaker_tilde {
     
 }t_grainmaker_tilde;
 
-void *grainmaker_tilde_new(t_symbol *s) {
+void *grainmaker_tilde_new(t_symbol *arrayname) {
     t_grainmaker_tilde *x = (t_grainmaker_tilde *)pd_new(grainmaker_tilde_class);
     
-    x->x_arrayname = s;
-    x->x_vec = 0;
+    x->x_arrayname = arrayname;
+    x->x_sample = 0;
+    x->x_sample_length = 0;
     x->f = 0;
     
     
@@ -59,6 +63,8 @@ void grainmaker_tilde_free(t_grainmaker_tilde *x) {
     inlet_free(x->in_num_grains);
     inlet_free(x->in_grain_length);
     outlet_free(x->out);
+    
+    grain_scheduler_free(x->x_scheduler);
 }
 
 static t_int *grainmaker_tilde_perform(t_int *w)
@@ -67,51 +73,54 @@ static t_int *grainmaker_tilde_perform(t_int *w)
     t_sample *in = (t_sample *)(w[2]);
     t_sample *out = (t_sample *)(w[3]);
     int n = (int)(w[4]);
-    int maxindex;
-    t_word *buf = x->x_vec;
-    int i;
+    int sample_length = x->x_sample_length - 1;;
+
+    if(sample_length <= 0) goto zero;
+    if (!x->x_sample) goto zero;
     
     
     // Print all current values of inlets
-    int offset = (int)x->offset;
-    int grain_length = (int)x->grain_length;
-    int num_grains = (int)x->num_grains;
-
-
-    int length = snprintf( NULL, 0, "%d", offset );
-    char* str1 = malloc( length + 1 );
-    snprintf( str1, length + 1, "%d", offset );
-    post("offset: ");
-    post(str1);
-    free(str1);
+    if(x->offset < 0) goto zero;
+    if(x->num_grains <= 0) goto zero;
+    if(x->grain_length <= 0) goto zero;
     
-    length = snprintf( NULL, 0, "%d", num_grains );
-    char* str = malloc( length + 1 );
-    snprintf( str, length + 1, "%d", num_grains );
-    post("num_grains: ");
-    post(str);
-    free(str);
-    
-    length = snprintf( NULL, 0, "%d", grain_length );
-    char* str2 = malloc( length + 1 );
-    snprintf( str2, length + 1, "%d", grain_length );
-    post("grain_length: ");
-    post(str2);
-    free(str2);
+    grain_scheduler_set_props(x->x_scheduler, x->offset, x->num_grains, x->grain_length);
 
-    
-    maxindex = x->x_npoints - 1;
-    if(maxindex<0) goto zero;
-    if (!buf) goto zero;
 
+//    int length = snprintf( NULL, 0, "%d", offset );
+//    char* str1 = malloc( length + 1 );
+//    snprintf( str1, length + 1, "%d", offset );
+//    post("offset: ");
+//    post(str1);
+//    free(str1);
+//
+//    length = snprintf( NULL, 0, "%d", num_grains );
+//    char* str = malloc( length + 1 );
+//    snprintf( str, length + 1, "%d", num_grains );
+//    post("num_grains: ");
+//    post(str);
+//    free(str);
+//
+//    length = snprintf( NULL, 0, "%d", grain_length );
+//    char* str2 = malloc( length + 1 );
+//    snprintf( str2, length + 1, "%d", grain_length );
+//    post("grain_length: ");
+//    post(str2);
+//    free(str2);
+
+    int i;
     for (i = 0; i < n; i++)
     {
-        int index = *in++;
-        if (index < 0)
-            index = 0;
-        else if (index > maxindex)
-            index = maxindex;
-        *out++ = buf[index].w_float;
+
+        int sample_pos = *in++;
+        if (sample_pos < 0) {
+            sample_pos = 0;
+        }
+        else if (sample_pos > sample_length) {
+            sample_pos = sample_length;
+        }
+        
+        grain_scheduler_perform(x->x_scheduler, sample_pos, out++);
     }
     return (w+5);
  zero:
@@ -120,29 +129,39 @@ static t_int *grainmaker_tilde_perform(t_int *w)
     return (w+5);
 }
 
-static void grainmaker_tilde_set(t_grainmaker_tilde *x, t_symbol *s)
+static void grainmaker_tilde_set(t_grainmaker_tilde *x)
 {
     // Copied from tabread~ external
     t_garray *a;
-    x->x_arrayname = s;
     
     if (!(a = (t_garray *)pd_findbyclass(x->x_arrayname, garray_class)))
     {
-        if (*s->s_name)
+        if (x->x_arrayname->s_name)
             pd_error(x, "grainmaker~: %s: no such array", x->x_arrayname->s_name);
-        x->x_vec = 0;
+        x->x_sample = 0;
     }
-    else if (!garray_getfloatwords(a, &x->x_npoints, &x->x_vec))
+    else if (!garray_getfloatwords(a, &x->x_sample_length, &x->x_sample))
     {
         pd_error(x, "%s: bad template for grainmaker~", x->x_arrayname->s_name);
-        x->x_vec = 0;
+        x->x_sample = 0;
     }
-    else garray_usedindsp(a);
+    else {
+        garray_usedindsp(a);
+        x->x_scheduler = grain_scheduler_new(x->x_sample, x->x_sample_length);
+    }
 }
 
 static void grainmaker_tilde_dsp(t_grainmaker_tilde *x, t_signal **sp)
 {
-    grainmaker_tilde_set(x, x->x_arrayname);
+    grainmaker_tilde_set(x);
+
+    if(x->offset < 0)
+        post("grainmaker~: please define a positive offset.");
+    if(x->num_grains <= 0)
+        post("grainmaker~: please define a number of grains > 0.");
+    if(x->grain_length <= 0)
+        post("grainmaker~: please define a grain length > 0.");
+
     dsp_add(grainmaker_tilde_perform, 4, x,
             sp[0]->s_vec,
             sp[1]->s_vec,
@@ -150,15 +169,15 @@ static void grainmaker_tilde_dsp(t_grainmaker_tilde *x, t_signal **sp)
 }
 
 static void grainmaker_tilde_set_offset(t_grainmaker_tilde *x, t_floatarg f) {
-    x->offset = f;
+    x->offset = (int)(f);
 }
 
 static void grainmaker_tilde_set_num_grains(t_grainmaker_tilde *x, t_floatarg f) {
-    x->num_grains = f;
+    x->num_grains = (int)(f);
 }
 
 static void grainmaker_tilde_set_grain_length(t_grainmaker_tilde *x, t_floatarg f) {
-    x->grain_length = f;
+    x->grain_length = (int)(f);
 }
 
 void grainmaker_tilde_setup(void) {
