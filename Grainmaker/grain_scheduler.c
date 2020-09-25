@@ -14,12 +14,14 @@ grain_scheduler *grain_scheduler_new(t_word *src_sample, int src_sample_length) 
 }
 
 void grain_scheduler_free(grain_scheduler *x) {
-//    for (int i = 0; i < x->num_grains; i++) {
-//        if (!(x->grains+i) && (x->grains+i) != 0) {
-//            grain_free((grain *) (x->grains+i));
-//        }
-//    }
-//    free(x->grains);
+    if (x) {
+        while (x->num_grains >= 0) {
+            x->num_grains--;
+            if ((x->grains+x->num_grains) >= 0) {
+                grain_free((grain *) (x->grains+x->num_grains));
+            }
+        }
+    }
     free(x);
 }
 
@@ -31,7 +33,7 @@ void grain_scheduler_set_props(grain_scheduler *x, int offset, int num_grains, i
 
 void grain_scheduler_perform(grain_scheduler *x, int sample_pos, t_sample *out) {
     if (!x->grains) {
-        x->grains = (t_int*)(calloc(x->num_grains, sizeof(t_int)));
+        x->grains = (t_int *) (calloc(x->num_grains, sizeof(t_int)));
     }
 
 	for (int i = 0; i < x->num_grains; i++){

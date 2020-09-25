@@ -59,12 +59,12 @@ void *grainmaker_tilde_new(t_symbol *arrayname) {
 }
 
 void grainmaker_tilde_free(t_grainmaker_tilde *x) {
+    grain_scheduler_free(x->x_scheduler);
+
     inlet_free(x->in_offset);
     inlet_free(x->in_num_grains);
     inlet_free(x->in_grain_length);
     outlet_free(x->out);
-    
-    grain_scheduler_free(x->x_scheduler);
 }
 
 static t_int *grainmaker_tilde_perform(t_int *w)
