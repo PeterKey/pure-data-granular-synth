@@ -10,16 +10,16 @@ extern "C" {
 
 typedef struct grain_scheduler
 {
-    t_word      *sample;
+    t_word      *src_sample;
     t_int       *grains;
-    int         sample_length,
+    int         src_sample_length,
                 offset,
                 num_grains,
                 grain_length;
     
 }grain_scheduler;
 
-grain_scheduler *grain_scheduler_new(t_word *sample, int sample_length);
+grain_scheduler *grain_scheduler_new(t_word *src_sample, int src_sample_length);
 
 void grain_scheduler_free(grain_scheduler *x);
 
