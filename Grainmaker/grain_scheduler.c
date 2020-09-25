@@ -14,6 +14,12 @@ grain_scheduler *grain_scheduler_new(t_word *src_sample, int src_sample_length) 
 }
 
 void grain_scheduler_free(grain_scheduler *x) {
+//    for (int i = 0; i < x->num_grains; i++) {
+//        if (!(x->grains+i) && (x->grains+i) != 0) {
+//            grain_free((grain *) (x->grains+i));
+//        }
+//    }
+//    free(x->grains);
     free(x);
 }
 
@@ -24,7 +30,9 @@ void grain_scheduler_set_props(grain_scheduler *x, int offset, int num_grains, i
 }
 
 void grain_scheduler_perform(grain_scheduler *x, int sample_pos, t_sample *out) {
-	x->grains = (t_int*)(calloc(sizeof(t_int)*x->num_grains));
+    if (!x->grains) {
+        x->grains = (t_int*)(calloc(x->num_grains, sizeof(t_int)));
+    }
 
 	for (int i = 0; i < x->num_grains; i++){
 		if (*(x->grains+i) == 0){
@@ -34,16 +42,4 @@ void grain_scheduler_perform(grain_scheduler *x, int sample_pos, t_sample *out) 
 	}
 
 	*out = x->src_sample[sample_pos].w_float;
-}
-grain *construct_grain(int sample_pos, int src_sample_length, int offset, int grain_length){
-	int range_start = sample_pos - offset;
-	if (range_start < 0) range_start = 0;
-	int range_end = sample_pos + offset;
-	int max_range = src_sample_length - grain_length;
-	if (range_end > max_range) range_end = max_range;
-
-	int start_sample = range_start + rand() % (range_end - range_start);
-	grain *new_grain = grain_new(start_sample, (start_sample + grain_length));
-	return new_grain;
-
 }

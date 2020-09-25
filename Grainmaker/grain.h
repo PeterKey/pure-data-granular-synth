@@ -1,5 +1,5 @@
-#ifndef grain_scheduler_h
-#define grain_scheduler_h
+#ifndef grain_h
+#define grain_h
 
 #ifdef __cplusplus
 extern "C" {
@@ -15,8 +15,10 @@ grain *grain_new(int start_sample, int end_sample);
 
 void grain_free(grain *x);
 
+grain *construct_grain(int sample_pos, int src_sample_length, int offset, int grain_length);
+
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* grain_scheduler_h */
+#endif /* grain_h */
