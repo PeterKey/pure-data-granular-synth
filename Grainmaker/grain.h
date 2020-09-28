@@ -11,11 +11,7 @@ typedef struct grain {
         current_pos;
 }grain;
 
-grain *grain_new(int start_sample, int end_sample);
-
-void grain_free(grain *x);
-
-grain *construct_grain(int sample_pos, int src_sample_length, int offset, int grain_length);
+grain construct_grain(int sample_pos, int src_sample_length, int offset, int grain_length);
 
 #ifdef __cplusplus
 }

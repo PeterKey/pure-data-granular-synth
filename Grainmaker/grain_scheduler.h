@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <m_pd.h>
+#include <grain.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -11,11 +12,13 @@ extern "C" {
 typedef struct grain_scheduler
 {
     t_word      *src_sample;
-    t_int       *grains;
-    int         src_sample_length,
+    grain       *grains;
+    int         *grain_pauses,
+                src_sample_length,
                 offset,
                 num_grains,
-                grain_length;
+                grain_length,
+                grain_spread;
     
 }grain_scheduler;
 
