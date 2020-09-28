@@ -2,6 +2,7 @@
 #include <time.h>
 #include "grain_scheduler.h"
 #include "grain.h"
+#include <math.h>
 
 grain_scheduler *grain_scheduler_new(t_word *src_sample, int src_sample_length) {
     grain_scheduler *x = (grain_scheduler *)malloc(sizeof(grain_scheduler));
@@ -67,7 +68,8 @@ void grain_scheduler_perform(grain_scheduler *x, int sample_pos, t_sample *out) 
                 
                 //Add Sample
                 // TODO: Convolve correctly
-                *out = *out + x->src_sample[x->grains[i].current_sample].w_float;
+            	float conv_value = gauss(x->grains[i]);
+                *out = *out + x->src_sample[x->grains[i].current_sample].w_float*conv_value;
                 x->grains[i].current_sample++;
                 
                 // If Grain has ended now pause it
@@ -83,4 +85,16 @@ void grain_scheduler_perform(grain_scheduler *x, int sample_pos, t_sample *out) 
 	*out = x->src_sample[sample_pos].w_float;
 }
 
+
+float gauss(grain x){
+	//creates a value to convolve with based on gaussian function f(x)=a*e^⁻(x-b)²/2c²
+	//where a = max value (1 for us so not needed), b = position of max value, c = 6/length of values
+	float g_val;
+	int p = (x.current_sample - (x.grain_size/2));
+	float c = 6/x.grain_size;
+	float e = -pow(p,2)/2*pow(c,2);
+	g_val = expf(e);
+
+	return g_val;
+}
 
