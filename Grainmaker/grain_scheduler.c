@@ -32,7 +32,7 @@ void grain_scheduler_set_props(grain_scheduler *x, int offset, int num_grains, i
         post("constructed grains");
         
         for (int i = 0; i < x->num_grains; i++) {
-            x->grains[i] = construct_grain(0, x->src_sample_length, x->offset, x->grain_length);
+            x->grains[i] = construct_grain(0, 0, 0, 0);
         }
 
         x->grain_pauses = (int *) calloc(x->num_grains, sizeof(int));
@@ -46,11 +46,39 @@ void grain_scheduler_set_props(grain_scheduler *x, int offset, int num_grains, i
 
 void grain_scheduler_perform(grain_scheduler *x, int sample_pos, t_sample *out) {
 
-//	for (int i = 0; i < x->num_grains; i++){
-//        if (!x->grains[i]){
-//			*(x->grains + i) = construct_grain(sample_pos, x->src_sample_length, x->offset, x->grain_length);
-//		}
-//	}
+    // if grains smaller then num_grains check if you can resize
+    int shrink_grains_array = (sizeof(x->grains) / x->num_grains) - x->num_grains;
+    
+    int current_num_grains = x->num_grains;
+    for (int i = 0; i < current_num_grains; i++) {
+
+        // If Grain waits
+        if (x->grain_pauses[i] > 0) {
+            if (shrink_grains_array > 0) {
+                // TODO: Shrink Array
+                shrink_grains_array--;
+                current_num_grains--;
+            } else {
+                x->grain_pauses[i]--;
+            }
+        } else { // Grain does not wait
+            // Check if grain is still running
+            if (x->grains[i].current_sample <= x->grains[i].end_sample) {
+                
+                //Add Sample
+                // TODO: Convolve correctly
+                *out = *out + x->src_sample[x->grains[i].current_sample].w_float;
+                x->grains[i].current_sample++;
+                
+                // If Grain has ended now pause it
+                if (x->grains[i].current_sample > x->grains[i].end_sample) {
+                    x->grain_pauses[i] = x->grain_spread;
+                }
+            } else { // If grain has finished and no more pause create new
+                x->grains[i] = construct_grain(sample_pos, x->src_sample_length, x->offset, x->grain_length);
+            }
+        }
+    }
 
 	*out = x->src_sample[sample_pos].w_float;
 }
