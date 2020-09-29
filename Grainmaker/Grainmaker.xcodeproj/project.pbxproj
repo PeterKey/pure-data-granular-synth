@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D01E8B2325235B6300DE8BBF /* grainmaker~.c in Sources */ = {isa = PBXBuildFile; fileRef = D01E8B2225235B6300DE8BBF /* grainmaker~.c */; };
 		D051029624F7BD9F000B325E /* m_pd.h in Headers */ = {isa = PBXBuildFile; fileRef = D051029524F7BD9F000B325E /* m_pd.h */; };
-		D051029824F7BF46000B325E /* grainmaker.c in Sources */ = {isa = PBXBuildFile; fileRef = D051029724F7BF46000B325E /* grainmaker.c */; };
 		D07E4322251BB3BD00107F46 /* grain.h in Headers */ = {isa = PBXBuildFile; fileRef = D07E4320251BB3BD00107F46 /* grain.h */; };
 		D07E4323251BB3BD00107F46 /* grain.c in Sources */ = {isa = PBXBuildFile; fileRef = D07E4321251BB3BD00107F46 /* grain.c */; };
 		D0E915462518D4EE00FF61AC /* grain_scheduler.h in Headers */ = {isa = PBXBuildFile; fileRef = D0E915442518D4EE00FF61AC /* grain_scheduler.h */; };
@@ -16,13 +16,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D040DD9B24FE4E5C0074FAD5 /* grainmaker_old.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = grainmaker_old.c; sourceTree = "<group>"; };
+		D01E8B2225235B6300DE8BBF /* grainmaker~.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "grainmaker~.c"; sourceTree = "<group>"; };
 		D051028E24F7BB66000B325E /* grainmaker~.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = "grainmaker~.pd_darwin"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D051029524F7BD9F000B325E /* m_pd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = m_pd.h; sourceTree = "<group>"; };
-		D051029724F7BF46000B325E /* grainmaker.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = grainmaker.c; sourceTree = "<group>"; };
 		D07E4320251BB3BD00107F46 /* grain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = grain.h; sourceTree = "<group>"; };
 		D07E4321251BB3BD00107F46 /* grain.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = grain.c; sourceTree = "<group>"; };
-		D0E9154325178A7A00FF61AC /* tabread.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = tabread.c; sourceTree = "<group>"; };
 		D0E915442518D4EE00FF61AC /* grain_scheduler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = grain_scheduler.h; sourceTree = "<group>"; };
 		D0E915452518D4EE00FF61AC /* grain_scheduler.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = grain_scheduler.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -45,9 +43,7 @@
 				D07E4321251BB3BD00107F46 /* grain.c */,
 				D0E915442518D4EE00FF61AC /* grain_scheduler.h */,
 				D0E915452518D4EE00FF61AC /* grain_scheduler.c */,
-				D0E9154325178A7A00FF61AC /* tabread.c */,
-				D040DD9B24FE4E5C0074FAD5 /* grainmaker_old.c */,
-				D051029724F7BF46000B325E /* grainmaker.c */,
+				D01E8B2225235B6300DE8BBF /* grainmaker~.c */,
 				D051029524F7BD9F000B325E /* m_pd.h */,
 				D051028F24F7BB66000B325E /* Products */,
 			);
@@ -132,7 +128,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D07E4323251BB3BD00107F46 /* grain.c in Sources */,
-				D051029824F7BF46000B325E /* grainmaker.c in Sources */,
+				D01E8B2325235B6300DE8BBF /* grainmaker~.c in Sources */,
 				D0E915472518D4EE00FF61AC /* grain_scheduler.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

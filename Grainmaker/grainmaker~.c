@@ -31,13 +31,6 @@ typedef struct _grainmaker_tilde {
     
     t_outlet        *out;
     
-//    t_int       offset, grain_length;
-//    t_float     head_pos, playback_speed;
-//    // sample, grain_envelope, (grain_start), direction
-//    t_array     *sample;
-//    t_inlet     *in_sample, *in_offset, *in_grain_length, *in_head_pos;
-//    t_outlet    *out_A, *out_B, *out_synch, *out_count;
-    
 }t_grainmaker_tilde;
 
 void *grainmaker_tilde_new(t_symbol *arrayname) {
@@ -86,27 +79,12 @@ static t_int *grainmaker_tilde_perform(t_int *w)
     
     grain_scheduler_set_props(x->x_scheduler, x->offset, x->num_grains, x->grain_length);
 
-
-//    int length = snprintf( NULL, 0, "%d", offset );
-//    char* str1 = malloc( length + 1 );
-//    snprintf( str1, length + 1, "%d", offset );
-//    post("offset: ");
-//    post(str1);
-//    free(str1);
-//
-//    length = snprintf( NULL, 0, "%d", num_grains );
+//    int length = snprintf( NULL, 0, "%d", num_grains );
 //    char* str = malloc( length + 1 );
 //    snprintf( str, length + 1, "%d", num_grains );
 //    post("num_grains: ");
 //    post(str);
 //    free(str);
-//
-//    length = snprintf( NULL, 0, "%d", grain_length );
-//    char* str2 = malloc( length + 1 );
-//    snprintf( str2, length + 1, "%d", grain_length );
-//    post("grain_length: ");
-//    post(str2);
-//    free(str2);
 
     int i;
     for (i = 0; i < n; i++)
@@ -154,13 +132,6 @@ static void grainmaker_tilde_set(t_grainmaker_tilde *x)
 static void grainmaker_tilde_dsp(t_grainmaker_tilde *x, t_signal **sp)
 {
     grainmaker_tilde_set(x);
-
-//    if(x->offset < 0)
-//        post("grainmaker~: please define a positive offset.");
-//    if(x->num_grains <= 0)
-//        post("grainmaker~: please define a number of grains > 0.");
-//    if(x->grain_length <= 0)
-//        post("grainmaker~: please define a grain length > 0.");
 
     dsp_add(grainmaker_tilde_perform, 4, x,
             sp[0]->s_vec,
