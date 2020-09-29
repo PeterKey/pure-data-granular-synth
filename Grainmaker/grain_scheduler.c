@@ -48,7 +48,7 @@ void grain_scheduler_set_props(grain_scheduler *x, int offset, int num_grains, i
 void grain_scheduler_perform(grain_scheduler *x, int sample_pos, t_sample *out) {
 
     // if grains smaller then num_grains check if you can resize
-    int shrink_grains_array = (sizeof(x->grains) / x->num_grains) - x->num_grains;
+    int shrink_grains_array = (sizeof(*(x->grains)) / sizeof(grain)) - x->num_grains;
     
     int current_num_grains = x->num_grains;
     for (int i = 0; i < current_num_grains; i++) {
@@ -68,8 +68,8 @@ void grain_scheduler_perform(grain_scheduler *x, int sample_pos, t_sample *out) 
                 
                 //Add Sample
                 // TODO: Convolve correctly
-            	float conv_value = gauss(x->grains[i]);
-                *out = *out + x->src_sample[x->grains[i].current_sample].w_float*conv_value;
+//            	float conv_value = gauss(x->grains[i]);
+//                *out = *out + x->src_sample[x->grains[i].current_sample].w_float * conv_value;
                 x->grains[i].current_sample++;
                 
                 // If Grain has ended now pause it
@@ -89,11 +89,10 @@ void grain_scheduler_perform(grain_scheduler *x, int sample_pos, t_sample *out) 
 float gauss(grain x){
 	//creates a value to convolve with based on gaussian function f(x)=a*e^⁻(x-b)²/2c²
 	//where a = max value (1 for us so not needed), b = position of max value, c = 6/length of values
-	float g_val;
-	int p = (x.current_sample - (x.grain_size/2));
-	float c = 6/x.grain_size;
-	float e = -pow(p,2)/2*pow(c,2);
-	g_val = expf(e);
+    int p = ((x.current_sample - x.start_sample) - (int) (x.grain_size / 2));
+	float c = 6 / x.grain_size;
+	float e = - pow(p, 2) / 2 * pow(c, 2);
+	float g_val = expf(e);
 
 	return g_val;
 }
