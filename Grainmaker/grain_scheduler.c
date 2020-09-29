@@ -1,8 +1,16 @@
 #include <stdlib.h>
 #include <time.h>
+#include <math.h>
 #include "grain_scheduler.h"
 #include "grain.h"
-#include <math.h>
+
+void printInt(int toPrint) {
+    int length = snprintf( NULL, 0, "%d", toPrint );
+    char* str = malloc( length + 1 );
+    snprintf( str, length + 1, "%d", toPrint );
+    post(str);
+    free(str);
+}
 
 grain_scheduler *grain_scheduler_new(t_word *src_sample, int src_sample_length) {
     grain_scheduler *x = (grain_scheduler *)malloc(sizeof(grain_scheduler));
@@ -24,6 +32,7 @@ void grain_scheduler_free(grain_scheduler *x) {
 }
 
 void grain_scheduler_set_props(grain_scheduler *x, int offset, int num_grains, int grain_length) {
+    post("set props");
     if (x->offset != offset) x->offset = offset;
     if (x->grain_length != grain_length) x->grain_length = grain_length;
     if (x->num_grains != num_grains) x->num_grains = num_grains;
@@ -46,9 +55,11 @@ void grain_scheduler_set_props(grain_scheduler *x, int offset, int num_grains, i
 }
 
 void grain_scheduler_perform(grain_scheduler *x, int sample_pos, t_sample *out) {
-
+    post("perform");
     // if grains smaller then num_grains check if you can resize
-    int shrink_grains_array = (sizeof(*(x->grains)) / sizeof(grain)) - x->num_grains;
+    int shrink_grains_array = (sizeof(*x->grains) / sizeof(grain)) - x->num_grains;
+    
+    printInt(shrink_grains_array);
     
     int current_num_grains = x->num_grains;
     for (int i = 0; i < current_num_grains; i++) {
@@ -69,7 +80,7 @@ void grain_scheduler_perform(grain_scheduler *x, int sample_pos, t_sample *out) 
                 //Add Sample
                 // TODO: Convolve correctly
 //            	float conv_value = gauss(x->grains[i]);
-//                *out = *out + x->src_sample[x->grains[i].current_sample].w_float * conv_value;
+//              *out = *out + x->src_sample[x->grains[i].current_sample].w_float * conv_value;
                 x->grains[i].current_sample++;
                 
                 // If Grain has ended now pause it

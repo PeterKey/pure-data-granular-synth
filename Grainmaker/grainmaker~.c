@@ -6,9 +6,9 @@
 //  Copyright © 2020 Realtime Audio. All rights reserved.
 //
 
-#include "m_pd.h"
 #include <stdlib.h>
 #include "grain_scheduler.h"
+#include "m_pd.h"
 
 static t_class *grainmaker_tilde_class;
 
@@ -72,19 +72,19 @@ static t_int *grainmaker_tilde_perform(t_int *w)
     if (!x->x_sample) goto zero;
     
     
+    post("offset:");
+    printInt(x->offset);
+    post("num_grains:");
+    printInt(x->num_grains);
+    post("grain_length");
+    printInt(x->grain_length);
+    
     // Print all current values of inlets
     if(x->offset < 0) goto zero;
-    if(x->num_grains <= 0) goto zero;
+    if(x->num_grains < 0) goto zero;
     if(x->grain_length <= 0) goto zero;
-    
-    grain_scheduler_set_props(x->x_scheduler, x->offset, x->num_grains, x->grain_length);
 
-//    int length = snprintf( NULL, 0, "%d", num_grains );
-//    char* str = malloc( length + 1 );
-//    snprintf( str, length + 1, "%d", num_grains );
-//    post("num_grains: ");
-//    post(str);
-//    free(str);
+    grain_scheduler_set_props(x->x_scheduler, x->offset, x->num_grains, x->grain_length);
 
     int i;
     for (i = 0; i < n; i++)
@@ -102,6 +102,7 @@ static t_int *grainmaker_tilde_perform(t_int *w)
     }
     return (w+5);
  zero:
+    post("zero");
     while (n--) *out++ = 0;
 
     return (w+5);
@@ -132,7 +133,8 @@ static void grainmaker_tilde_set(t_grainmaker_tilde *x)
 static void grainmaker_tilde_dsp(t_grainmaker_tilde *x, t_signal **sp)
 {
     grainmaker_tilde_set(x);
-
+    if (x->offset > x->x_sample_length) x->offset = x->x_sample_length;
+    if (x->grain_length > x->x_sample_length) x->grain_length = x->x_sample_length;
     dsp_add(grainmaker_tilde_perform, 4, x,
             sp[0]->s_vec,
             sp[1]->s_vec,
@@ -140,21 +142,34 @@ static void grainmaker_tilde_dsp(t_grainmaker_tilde *x, t_signal **sp)
 }
 
 static void grainmaker_tilde_set_offset(t_grainmaker_tilde *x, t_floatarg f) {
-    x->offset = (int)(f);
-    if(x->offset < 0) x->offset = 0;
-    if(x->offset > x->x_sample_length) x->offset = x->x_sample_length;
+    int new_value = (int)(f);
+    if(new_value < 0) new_value = 0;
+    if(x->x_sample_length && new_value > x->x_sample_length) {
+        new_value = x->x_sample_length;
+    }
+    x->offset = new_value;
+    post("set offset to");
+    printInt(x->offset);
 }
 
 static void grainmaker_tilde_set_num_grains(t_grainmaker_tilde *x, t_floatarg f) {
-    x->num_grains = (int)(f);
-    if(x->num_grains < 0) x->num_grains = 0;
-    if(x->num_grains > 50) x->num_grains = 50;
+    int new_value = (int)(f);
+    if(new_value < 0) new_value = 0;
+    if(new_value > 50) new_value = 50;
+    x->num_grains = new_value;
+    post("set num grains to");
+    printInt(x->num_grains);
 }
 
 static void grainmaker_tilde_set_grain_length(t_grainmaker_tilde *x, t_floatarg f) {
-    x->grain_length = (int)(f);
-    if(x->grain_length <= 0) x->grain_length = 1;
-    if(x->grain_length > x->x_sample_length) x->grain_length = x->x_sample_length;
+    int new_value = (int)(f);
+    if(new_value <= 0) new_value = 1;
+    if(x->x_sample_length && new_value > x->x_sample_length) {
+        new_value = x->x_sample_length;
+    }
+    x->grain_length = new_value;
+    post("set grain length");
+    printInt(x->grain_length);
 }
 
 void grainmaker_tilde_setup(void) {

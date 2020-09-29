@@ -2,7 +2,7 @@
 #define grain_scheduler_h
 
 #include <stdio.h>
-#include <m_pd.h>
+#include "m_pd.h"
 #include "grain.h"
 
 #ifdef __cplusplus
@@ -31,6 +31,8 @@ void grain_scheduler_set_props(grain_scheduler *x, int offset, int num_grains, i
 void grain_scheduler_perform(grain_scheduler *x, int sample_pos, t_sample *out);
 
 float gauss(grain x);
+
+void printInt(int toPrint);
 
 #ifdef __cplusplus
 }

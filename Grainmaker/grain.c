@@ -1,5 +1,6 @@
 #include <stdlib.h>
-#include <m_pd.h>
+#include <time.h>
+#include "m_pd.h"
 #include "grain.h"
 
 int minimumInt(int a, int b) {
@@ -26,6 +27,7 @@ grain construct_grain(int sample_pos, int src_sample_length, int offset, int gra
     int range_size = range_end - range_start;
     int start_sample;
     if (range_size > 0) {
+        srand((unsigned int) time(NULL));
         start_sample = range_start + rand() % (range_end - range_start);
     } else {
         start_sample = 0;
