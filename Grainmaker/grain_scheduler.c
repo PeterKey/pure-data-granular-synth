@@ -62,6 +62,8 @@ void grain_scheduler_set_props(grain_scheduler *x, int offset, int num_grains, i
 void grain_scheduler_perform(grain_scheduler *x, int sample_pos, t_sample *out) {
     // if grains smaller then num_grains check if you can resize
     int shrink_grains_array = x->current_num_grains - x->num_grains;
+    
+    float output = 0.0;
 
     for (int i = 0; i < x->current_num_grains; i++) {
 
@@ -83,7 +85,7 @@ void grain_scheduler_perform(grain_scheduler *x, int sample_pos, t_sample *out) 
                 //Add Sample
                 // TODO: Convolve correctly
             	float conv_value = gauss(x->grains[i]);
-                *out = *out + ((x->src_sample[x->grains[i].current_sample].w_float * conv_value) / x->num_grains);
+                output = output + (float) ((x->src_sample[x->grains[i].current_sample].w_float * conv_value) / (float) x->num_grains);
                 x->grains[i].current_sample++;
 
                 // If Grain has ended now pause it
@@ -98,6 +100,7 @@ void grain_scheduler_perform(grain_scheduler *x, int sample_pos, t_sample *out) 
     }
 
 //	*out = x->src_sample[sample_pos].w_float;
+    *out = output;
 }
 
 
