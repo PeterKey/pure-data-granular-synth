@@ -146,7 +146,7 @@ float gauss(grain x){
 	//where a = max value (1 for us so not needed), b = position of max value, c = 6/length of values
     if (x.grain_size == 0) return 0.0;
     float p = ((x.current_sample - x.start_sample) - (x.grain_size / 2));
-	float c = 6 / x.grain_size;
+	float c = 20 / x.grain_size;
 	float e = - pow(p, 2) / 2 * pow(c, 2);
     float g_val = expf(e);
 
