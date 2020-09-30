@@ -94,7 +94,6 @@ static t_int *grainmaker_tilde_perform(t_int *w)
     }
     return (w+5);
  zero:
-    post("zero");
     while (n--) *out++ = 0;
 
     return (w+5);
@@ -139,18 +138,14 @@ static void grainmaker_tilde_set_offset(t_grainmaker_tilde *x, t_floatarg f) {
     if(x->x_sample_length && new_value > x->x_sample_length) {
         new_value = x->x_sample_length;
     }
-    x->offset = new_value;
-    post("set offset to");
-    printInt(x->offset);
+    x->offset = (int) new_value;
 }
 
 static void grainmaker_tilde_set_num_grains(t_grainmaker_tilde *x, t_floatarg f) {
     int new_value = (int)(f);
     if(new_value < 0) new_value = 0;
     if(new_value > 50) new_value = 50;
-    x->num_grains = new_value;
-    post("set num grains to");
-    printInt(x->num_grains);
+    x->num_grains = (int) new_value;
 }
 
 static void grainmaker_tilde_set_grain_length(t_grainmaker_tilde *x, t_floatarg f) {
@@ -159,9 +154,7 @@ static void grainmaker_tilde_set_grain_length(t_grainmaker_tilde *x, t_floatarg 
     if(x->x_sample_length && new_value > x->x_sample_length) {
         new_value = x->x_sample_length;
     }
-    x->grain_length = new_value;
-    post("set grain length");
-    printInt(x->grain_length);
+    x->grain_length = (int) new_value;
 }
 
 void grainmaker_tilde_setup(void) {
