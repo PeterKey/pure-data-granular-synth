@@ -186,4 +186,6 @@ void grainmaker_tilde_setup(void) {
                     gensym("grain_length"),
                     A_DEFFLOAT,
                     0);
+    
+    class_sethelpsymbol(grainmaker_tilde_class, gensym("grainmaker~"));
 }
