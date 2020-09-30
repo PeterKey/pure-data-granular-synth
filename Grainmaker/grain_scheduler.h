@@ -5,9 +5,9 @@
 #include "m_pd.h"
 #include "grain.h"
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+//#ifdef __cplusplus
+//extern "C" {
+//#endif
 
 typedef struct grain_scheduler
 {
@@ -34,8 +34,8 @@ float gauss(grain x);
 
 void printInt(int toPrint);
 
-#ifdef __cplusplus
-}
-#endif
+//#ifdef __cplusplus
+//}
+//#endif
 
 #endif /* grain_scheduler_h */
