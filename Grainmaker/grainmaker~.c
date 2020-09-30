@@ -71,14 +71,6 @@ static t_int *grainmaker_tilde_perform(t_int *w)
     if(sample_length <= 0) goto zero;
     if (!x->x_sample) goto zero;
     
-    
-    post("offset:");
-    printInt(x->offset);
-    post("num_grains:");
-    printInt(x->num_grains);
-    post("grain_length");
-    printInt(x->grain_length);
-    
     // Print all current values of inlets
     if(x->offset < 0) goto zero;
     if(x->num_grains < 0) goto zero;

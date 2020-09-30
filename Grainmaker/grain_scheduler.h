@@ -5,10 +5,6 @@
 #include "m_pd.h"
 #include "grain.h"
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 typedef struct grain_scheduler
 {
     t_word      *src_sample;
@@ -17,6 +13,7 @@ typedef struct grain_scheduler
                 src_sample_length,
                 offset,
                 num_grains,
+                current_num_grains,
                 grain_length,
                 grain_spread;
     
@@ -33,9 +30,5 @@ void grain_scheduler_perform(grain_scheduler *x, int sample_pos, t_sample *out);
 float gauss(grain x);
 
 void printInt(int toPrint);
-
-#ifdef __cplusplus
-}
-#endif
 
 #endif /* grain_scheduler_h */
