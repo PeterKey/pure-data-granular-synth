@@ -27,8 +27,4 @@ void grain_scheduler_set_props(grain_scheduler *x, int offset, int num_grains, i
 
 void grain_scheduler_perform(grain_scheduler *x, int sample_pos, t_sample *out);
 
-float gauss(grain x);
-
-void printInt(int toPrint);
-
 #endif /* grain_scheduler_h */
