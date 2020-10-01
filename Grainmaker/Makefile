@@ -15,7 +15,9 @@ grainmaker~.class.sources += grain.c
 lib.setup.sources = $(lib.name).c
 
 # all extra files to be included in binary distribution of the library
-datafiles = 
+datafiles = \
+grainmaker~-help.pd \
+sing.wav
 
 # include Makefile.pdlibbuilder from submodule directory 'pd-lib-builder'
 include Makefile.pdlibbuilder
@@ -25,5 +27,5 @@ buildcheck: all
 installcheck: install
 		test -e $(installpath)/grainmaker~.$(extension)
 		
-DESTDIR = ./build
+DESTDIR = /build
 installpath :=$(DESTDIR)/$(lib.name)
