@@ -1,30 +1,72 @@
 \begin{theindex}
 
   \item {\_grainmaker\_tilde}, \hyperpage{2}
+    \subitem {grainmaker\_tilde\_dsp}, \hyperpage{3}
+    \subitem {grainmaker\_tilde\_free}, \hyperpage{3}
+    \subitem {grainmaker\_tilde\_new}, \hyperpage{4}
+    \subitem {grainmaker\_tilde\_perform}, \hyperpage{4}
+    \subitem {grainmaker\_tilde\_set}, \hyperpage{4}
+    \subitem {grainmaker\_tilde\_set\_grain\_length}, \hyperpage{5}
+    \subitem {grainmaker\_tilde\_set\_num\_grains}, \hyperpage{5}
+    \subitem {grainmaker\_tilde\_set\_offset}, \hyperpage{5}
 
   \indexspace
 
   \item {construct\_grain}
-    \subitem {grain}, \hyperpage{3}
+    \subitem {grain}, \hyperpage{6}
+  \item {current\_sample}
+    \subitem {grain}, \hyperpage{7}
 
   \indexspace
 
-  \item {grain}, \hyperpage{2}
-    \subitem {construct\_grain}, \hyperpage{3}
-  \item {grain.h}, \hyperpage{8}
-  \item {grain\_scheduler}, \hyperpage{4}
-    \subitem {grain\_scheduler\_free}, \hyperpage{5}
-    \subitem {grain\_scheduler\_new}, \hyperpage{6}
-    \subitem {grain\_scheduler\_perform}, \hyperpage{6}
-    \subitem {grain\_scheduler\_set\_props}, \hyperpage{6}
-  \item {grain\_scheduler.h}, \hyperpage{8}
+  \item {end\_sample}
+    \subitem {grain}, \hyperpage{7}
+
+  \indexspace
+
+  \item {grain}, \hyperpage{6}
+    \subitem {construct\_grain}, \hyperpage{6}
+    \subitem {current\_sample}, \hyperpage{7}
+    \subitem {end\_sample}, \hyperpage{7}
+    \subitem {grain\_size}, \hyperpage{7}
+    \subitem {start\_sample}, \hyperpage{7}
+  \item {grain.h}, \hyperpage{11}
+  \item {grain\_scheduler}, \hyperpage{7}
+    \subitem {grain\_scheduler\_free}, \hyperpage{8}
+    \subitem {grain\_scheduler\_new}, \hyperpage{9}
+    \subitem {grain\_scheduler\_perform}, \hyperpage{9}
+    \subitem {grain\_scheduler\_set\_props}, \hyperpage{9}
+  \item {grain\_scheduler.h}, \hyperpage{11}
   \item {grain\_scheduler\_free}
-    \subitem {grain\_scheduler}, \hyperpage{5}
+    \subitem {grain\_scheduler}, \hyperpage{8}
   \item {grain\_scheduler\_new}
-    \subitem {grain\_scheduler}, \hyperpage{6}
+    \subitem {grain\_scheduler}, \hyperpage{9}
   \item {grain\_scheduler\_perform}
-    \subitem {grain\_scheduler}, \hyperpage{6}
+    \subitem {grain\_scheduler}, \hyperpage{9}
   \item {grain\_scheduler\_set\_props}
-    \subitem {grain\_scheduler}, \hyperpage{6}
+    \subitem {grain\_scheduler}, \hyperpage{9}
+  \item {grain\_size}
+    \subitem {grain}, \hyperpage{7}
+  \item {grainmaker\_tilde\_dsp}
+    \subitem {\_grainmaker\_tilde}, \hyperpage{3}
+  \item {grainmaker\_tilde\_free}
+    \subitem {\_grainmaker\_tilde}, \hyperpage{3}
+  \item {grainmaker\_tilde\_new}
+    \subitem {\_grainmaker\_tilde}, \hyperpage{4}
+  \item {grainmaker\_tilde\_perform}
+    \subitem {\_grainmaker\_tilde}, \hyperpage{4}
+  \item {grainmaker\_tilde\_set}
+    \subitem {\_grainmaker\_tilde}, \hyperpage{4}
+  \item {grainmaker\_tilde\_set\_grain\_length}
+    \subitem {\_grainmaker\_tilde}, \hyperpage{5}
+  \item {grainmaker\_tilde\_set\_num\_grains}
+    \subitem {\_grainmaker\_tilde}, \hyperpage{5}
+  \item {grainmaker\_tilde\_set\_offset}
+    \subitem {\_grainmaker\_tilde}, \hyperpage{5}
+
+  \indexspace
+
+  \item {start\_sample}
+    \subitem {grain}, \hyperpage{7}
 
 \end{theindex}
