@@ -145,16 +145,3 @@ void grain_scheduler_perform(grain_scheduler *x, int sample_pos, t_sample *out) 
     *out = output;
 }
 
-
-float gauss(grain x){
-	//creates a value to convolve with based on gaussian function f(x)=a*e^⁻(x-b)²/2c²
-	//where a = max value (1 for us so not needed), b = position of max value, c = 6/length of values
-    if (x.grain_size == 0) return 0.0;
-    float p = ((x.current_sample - x.start_sample) - (x.grain_size / 2));
-	float c = 20 / x.grain_size;
-	float e = - pow(p, 2) / 2 * pow(c, 2);
-    float g_val = expf(e);
-
-	return g_val;
-}
-
