@@ -1,10 +1,15 @@
-//
-//  grainmaker.c
-//  Grainmaker
-//
-//  Created by Peter K. Gorzo on 27.08.20.
-//  Copyright © 2020 Realtime Audio. All rights reserved.
-//
+/**
+*@file grainmaker~.c
+*@author Peter Gorzo, Jonas Koerwer, Claudio Albrecht, Roman Schweikert<br>
+*Audiocommunication Group, Technical University Berlin <br>
+*Real-time audio programming in C, SoSe2020 <br>
+*A simple Grain sampler <br>
+*<br>
+*@brief Entrypoint of the grainmaker~ external and pd interfacing <br>
+*<br>
+*Pure Data related external definitions. <br>
+**<br>
+*/
 
 #include <stdlib.h>
 #include "grain_scheduler.h"
@@ -12,6 +17,23 @@
 
 static t_class *grainmaker_tilde_class;
 
+/**
+* @struct _grainmaker_tilde
+* @brief A structure for a grainmaker~ object <br>
+* @var _grainmaker_tilde::x_obj The grainmaker object self reference <br>
+* @var _grainmaker_tilde::x_sample Pointer to the sample array <br>
+* @var _grainmaker_tilde::x_sample_length Length of x_sample <br>
+* @var _grainmaker_tilde::offset Value of the offset inlet <br>
+* @var _grainmaker_tilde::num_grains Value of the num_grains inlet <br>
+* @var _grainmaker_tilde::grain_length Value of the grain_length inlet <br>
+* @var _grainmaker_tilde::x_arrayname Name of the referenced sample array<br>
+* @var _grainmaker_tilde::f Reference for pure data signal input <br>
+* @var _grainmaker_tilde::x_scheduler Pointer to current grain_scheduler <br>
+* @var _grainmaker_tilde::in_offset Pointer to the offset inlet <br>
+* @var _grainmaker_tilde::in_num_grains Pointer to the num_grains inlet <br>
+* @var _grainmaker_tilde::in_grain_length Pointer to the grain_length inlet <br>
+* @var _grainmaker_tilde::out Pointer to the signal outlet <br>
+*/
 typedef struct _grainmaker_tilde {
     t_object        x_obj;
     t_word          *x_sample;
@@ -33,6 +55,13 @@ typedef struct _grainmaker_tilde {
     
 }t_grainmaker_tilde;
 
+/**
+* @related _grainmaker_tilde
+* @brief Creates new grainmaker object <br>
+* @param arrayname  Name of the provided array used as a source sample <br>
+* Create new grainmaker_tilde object <br>
+* @return Pointer to grainmaker object <br>
+*/
 void *grainmaker_tilde_new(t_symbol *arrayname) {
     t_grainmaker_tilde *x = (t_grainmaker_tilde *)pd_new(grainmaker_tilde_class);
     
@@ -51,6 +80,12 @@ void *grainmaker_tilde_new(t_symbol *arrayname) {
     return (void *)x;
 }
 
+/**
+* @related _grainmaker_tilde
+* @brief Frees grainmaker object <br>
+* @param x  grainmaker object<br>
+* Free the grainmaker object <br>
+*/
 void grainmaker_tilde_free(t_grainmaker_tilde *x) {
     grain_scheduler_free(x->x_scheduler);
 
@@ -60,6 +95,13 @@ void grainmaker_tilde_free(t_grainmaker_tilde *x) {
     outlet_free(x->out);
 }
 
+/**
+* @related _grainmaker_tilde
+* @brief Performs grainmaker tilde <br>
+* @param w signal input<br>
+* Performs grainmaker tilde <br>
+@return returns output signal  <br>
+*/
 static t_int *grainmaker_tilde_perform(t_int *w)
 {
     t_grainmaker_tilde *x = (t_grainmaker_tilde *)(w[1]);
@@ -99,6 +141,12 @@ static t_int *grainmaker_tilde_perform(t_int *w)
     return (w+5);
 }
 
+/**
+* @related _grainmaker_tilde
+* @brief Sets the array to read from <br>
+* @param x grainmaker tilde object<br>
+* Sets the array to use as a sample  <br>
+*/
 static void grainmaker_tilde_set(t_grainmaker_tilde *x)
 {
     // Copied from tabread~ external
@@ -121,6 +169,12 @@ static void grainmaker_tilde_set(t_grainmaker_tilde *x)
     }
 }
 
+/**
+* @related _grainmaker_tilde
+* @brief Sets up the grainmaker tilde for use as a dsp <br>
+* @param x grainmaker tilde object<br>
+* @param sp the input signal vector <br>
+*/
 static void grainmaker_tilde_dsp(t_grainmaker_tilde *x, t_signal **sp)
 {
     grainmaker_tilde_set(x);
@@ -132,6 +186,12 @@ static void grainmaker_tilde_dsp(t_grainmaker_tilde *x, t_signal **sp)
             sp[0]->s_n);
 }
 
+/**
+* @related _grainmaker_tilde
+* @brief Reacts to inlet changes of offset <br>
+* @param x grainmaker tilde object<br>
+* @param f new value of offset <br>
+*/
 static void grainmaker_tilde_set_offset(t_grainmaker_tilde *x, t_floatarg f) {
     int new_value = (int)(f);
     if(new_value < 0) new_value = 0;
@@ -141,6 +201,12 @@ static void grainmaker_tilde_set_offset(t_grainmaker_tilde *x, t_floatarg f) {
     x->offset = (int) new_value;
 }
 
+/**
+* @related _grainmaker_tilde
+* @brief Reacts to inlet changes of num_grains <br>
+* @param x grainmaker tilde object<br>
+* @param f new value of num_grains <br>
+*/
 static void grainmaker_tilde_set_num_grains(t_grainmaker_tilde *x, t_floatarg f) {
     int new_value = (int)(f);
     if(new_value < 0) new_value = 0;
@@ -148,6 +214,12 @@ static void grainmaker_tilde_set_num_grains(t_grainmaker_tilde *x, t_floatarg f)
     x->num_grains = (int) new_value;
 }
 
+/**
+* @related _grainmaker_tilde
+* @brief Reacts to inlet changes of grain_length <br>
+* @param x grainmaker tilde object<br>
+* @param f new value of grain_length <br>
+*/
 static void grainmaker_tilde_set_grain_length(t_grainmaker_tilde *x, t_floatarg f) {
     int new_value = (int)(f);
     if(new_value <= 0) new_value = 1;
@@ -157,6 +229,10 @@ static void grainmaker_tilde_set_grain_length(t_grainmaker_tilde *x, t_floatarg 
     x->grain_length = (int) new_value;
 }
 
+/**
+* @related _grainmaker_tilde
+* @brief Sets up grainmaker as a pd external <br>
+*/
 void grainmaker_tilde_setup(void) {
     grainmaker_tilde_class = class_new(gensym("grainmaker~"),
                                  (t_newmethod)grainmaker_tilde_new,
