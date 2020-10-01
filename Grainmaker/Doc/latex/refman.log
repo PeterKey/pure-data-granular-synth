@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.1)  1 OCT 2020 16:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.1)  1 OCT 2020 16:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -869,14 +869,19 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 10.79993pt on input line 1.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 6.29996pt on input line 3.
+(Font)              scaled to size 6.29996pt on input line 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 5--5
+Underfull \hbox (badness 10000) in paragraph at lines 4--4
  []  
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7--7
+Underfull \hbox (badness 10000) in paragraph at lines 6--6
+ []  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--8
  []  
  []
 
@@ -895,7 +900,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--7
  []  
  []
 
-
+[1]
 Underfull \hbox (badness 10000) in paragraph at lines 13--13
   
  []
@@ -910,10 +915,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 13--13
  []  
  []
 
-[1]) (./struct__grainmaker__tilde.tex
-LaTeX Font Info:    Trying to load font information for TS1+phv on input line 1
-0.
+) (./struct__grainmaker__tilde.tex
+Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
+ []
+
+LaTeX Font Info:    Trying to load font information for TS1+phv on input line 1
+6.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/ts1phv.fd
 File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
 
@@ -934,64 +942,174 @@ LaTeX Warning: Font shape declaration has incorrect series value `mc'.
 
 )
 LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
-(Font)              scaled to size 8.99994pt on input line 10.
-) (./structgrain.tex
-Underfull \hbox (badness 10000) in paragraph at lines 5--6
+(Font)              scaled to size 8.99994pt on input line 16.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 8.09995pt on input line 59.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 59.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 8.09995pt on input line 59.
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--60
 
  []
 
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 11
+
+Underfull \hbox (badness 10000) in paragraph at lines 62--63
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--66
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 71--72
+
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 74--75
+
+ []
+
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 77.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 6.29996pt on input line 77.
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--78
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--81
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--85
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 89--90
+
+ []
+
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 7.19995pt on input line 97.
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 97
 .
 (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-) [2]
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.09995pt on input line 32.
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 32.
-LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 8.09995pt on input line 32.
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 32.
-LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 6.29996pt on input line 32.
-
-Underfull \hbox (badness 10000) in paragraph at lines 32--33
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 37--38
-
- []
-
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 7.19995pt on input line 45.
+)
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 45.
-LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 45.
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 97.
 
-Underfull \hbox (badness 10000) in paragraph at lines 49--50
+Underfull \hbox (badness 10000) in paragraph at lines 101--102
 
  []
 
 
-Underfull \hbox (badness 10000) detected at line 66
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
+
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 149
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 67--68
+Underfull \hbox (badness 10000) in paragraph at lines 150--151
 
  []
 
-[3]) (./structgrain__scheduler.tex
+
+Underfull \hbox (badness 10000) in paragraph at lines 161--162
+
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 171
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--173
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 183--184
+
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 201--202
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 221--222
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 241--242
+
+ []
+
+[5]) (./structgrain.tex
 Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 28--29
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--34
+
+ []
+
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 41.
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--46
+
+ []
+
+[6]
+Underfull \hbox (badness 10000) detected at line 62
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 63--64
+
+ []
+
+) (./structgrain__scheduler.tex
+Underfull \hbox (badness 10000) in paragraph at lines 5--6
+
+ []
+
+[7]
 Underfull \hbox (badness 10000) in paragraph at lines 51--54
 
  []
@@ -1021,7 +1139,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 79--80
 
  []
 
-[4] [5]
+[8]
 Underfull \hbox (badness 10000) in paragraph at lines 97--100
 
  []
@@ -1046,7 +1164,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 139--140
 
  []
 
-[6] [7]) (./grain_8h.tex
+[9] [10]) (./grain_8h.tex
 Underfull \hbox (badness 10000) in paragraph at lines 5--9
 
  []
@@ -1096,7 +1214,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 33--38
 
  []
 
-[8]
+[11]
 Underfull \hbox (badness 10000) detected at line 40
 [][][]
  []
@@ -1111,12 +1229,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--46
 
  []
 
-) [9] [10
-
-] (./refman.ind
+) [12] (./refman.ind
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 (Font)              scaled to size 12.9599pt on input line 1.
- [11
+ [13
 
 
 ])
@@ -1126,13 +1242,13 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 189.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 189.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 189.
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 3163C308A7BAC2A8FF396507FC2D6FC2;3390.
+(rerunfilecheck)             Checksum: 1F8D33305B844851E821FD6F8323E6DD;4116.
  ) 
 Here is how much of TeX's memory you used:
- 16554 strings out of 480608
- 243357 string characters out of 5903630
- 523440 words of memory out of 5000000
- 32036 multiletter control sequences out of 15000+600000
+ 16609 strings out of 480608
+ 244887 string characters out of 5903630
+ 524535 words of memory out of 5000000
+ 32056 multiletter control sequences out of 15000+600000
  580182 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,15n,96p,938b,627s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1146,10 +1262,10 @@ ist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2020/texmf-dist/fon
 ts/type1/urw/helvetic/uhvb8ac.pfb></usr/local/texlive/2020/texmf-dist/fonts/typ
 e1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/
 helvetic/uhvro8a.pfb>
-Output written on refman.pdf (12 pages, 94361 bytes).
+Output written on refman.pdf (14 pages, 103627 bytes).
 PDF statistics:
- 324 PDF objects out of 1000 (max. 8388607)
- 290 compressed objects within 3 object streams
- 84 named destinations out of 1000 (max. 500000)
- 137 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 435 PDF objects out of 1000 (max. 8388607)
+ 398 compressed objects within 4 object streams
+ 119 named destinations out of 1000 (max. 500000)
+ 161 words of extra memory for PDF output out of 10000 (max. 10000000)
 
