@@ -1,0 +1,163 @@
+\hypertarget{structgrain__scheduler}{}\doxysubsection{grain\+\_\+scheduler Struct Reference}
+\label{structgrain__scheduler}\index{grain\_scheduler@{grain\_scheduler}}
+
+
+A structure for a gain\+\_\+scheduler object ~\newline
+  
+
+
+
+
+{\ttfamily \#include $<$grain\+\_\+scheduler.\+h$>$}
+
+
+
+Collaboration diagram for grain\+\_\+scheduler\+:
+% FIG 0
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structgrain__scheduler_ae996e5287686a2befe009398a661f2b8}\label{structgrain__scheduler_ae996e5287686a2befe009398a661f2b8}} 
+t\+\_\+word $\ast$ {\bfseries src\+\_\+sample}
+\item 
+\mbox{\Hypertarget{structgrain__scheduler_a93ba8fd55f55eda5988b14443f91cda8}\label{structgrain__scheduler_a93ba8fd55f55eda5988b14443f91cda8}} 
+\mbox{\hyperlink{structgrain}{grain}} $\ast$ {\bfseries grains}
+\item 
+\mbox{\Hypertarget{structgrain__scheduler_a9b4c46bd546ba9d4b7b4a4c5074a5acd}\label{structgrain__scheduler_a9b4c46bd546ba9d4b7b4a4c5074a5acd}} 
+int $\ast$ {\bfseries grain\+\_\+pauses}
+\item 
+\mbox{\Hypertarget{structgrain__scheduler_a59d9ed491ca1adfb2ec8368bcfaa18ab}\label{structgrain__scheduler_a59d9ed491ca1adfb2ec8368bcfaa18ab}} 
+int {\bfseries src\+\_\+sample\+\_\+length}
+\item 
+\mbox{\Hypertarget{structgrain__scheduler_a0368ee2011ea728ca2ca42e62941e803}\label{structgrain__scheduler_a0368ee2011ea728ca2ca42e62941e803}} 
+int {\bfseries offset}
+\item 
+\mbox{\Hypertarget{structgrain__scheduler_a51009b0250a49de50308e5b8f4b534b3}\label{structgrain__scheduler_a51009b0250a49de50308e5b8f4b534b3}} 
+int {\bfseries num\+\_\+grains}
+\item 
+\mbox{\Hypertarget{structgrain__scheduler_a83c88174b62a1aab792d3f22313f6c70}\label{structgrain__scheduler_a83c88174b62a1aab792d3f22313f6c70}} 
+int {\bfseries current\+\_\+num\+\_\+grains}
+\item 
+\mbox{\Hypertarget{structgrain__scheduler_a26705f8d7541a29a1a7aa940330f4ca9}\label{structgrain__scheduler_a26705f8d7541a29a1a7aa940330f4ca9}} 
+int {\bfseries grain\+\_\+length}
+\item 
+\mbox{\Hypertarget{structgrain__scheduler_aa14237652525ebcedbce16be084ae5fe}\label{structgrain__scheduler_aa14237652525ebcedbce16be084ae5fe}} 
+int {\bfseries grain\+\_\+spread}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Related Functions}
+(Note that these are not member functions.) \begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structgrain__scheduler}{grain\+\_\+scheduler}} $\ast$ \mbox{\hyperlink{structgrain__scheduler_a762c9a7e465d98ecd3465e55678882a0}{grain\+\_\+scheduler\+\_\+new}} (t\+\_\+word $\ast$src\+\_\+sample, int src\+\_\+sample\+\_\+length)
+\begin{DoxyCompactList}\small\item\em Creates a new \mbox{\hyperlink{structgrain__scheduler}{grain\+\_\+scheduler}} object ~\newline
+ This function sets the source sample and its length for the ~\newline
+ \mbox{\hyperlink{structgrain__scheduler}{grain\+\_\+scheduler}} class. ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structgrain__scheduler_a5cc18341b62a949b465517458076a830}{grain\+\_\+scheduler\+\_\+free}} (\mbox{\hyperlink{structgrain__scheduler}{grain\+\_\+scheduler}} $\ast$x)
+\begin{DoxyCompactList}\small\item\em Frees a \mbox{\hyperlink{structgrain__scheduler}{grain\+\_\+scheduler}} object ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structgrain__scheduler_a84f78da9ca40723cb56878a2f5f3bfa4}{grain\+\_\+scheduler\+\_\+set\+\_\+props}} (\mbox{\hyperlink{structgrain__scheduler}{grain\+\_\+scheduler}} $\ast$x, int offset, int num\+\_\+grains, int grain\+\_\+length)
+\begin{DoxyCompactList}\small\item\em Sets the properties of the \mbox{\hyperlink{structgrain__scheduler}{grain\+\_\+scheduler}} object as defined by outside input. ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structgrain__scheduler_adfb2cc8a090fffaa95581504e5e5a3b9}{grain\+\_\+scheduler\+\_\+perform}} (\mbox{\hyperlink{structgrain__scheduler}{grain\+\_\+scheduler}} $\ast$x, int sample\+\_\+pos, t\+\_\+sample $\ast$out)
+\begin{DoxyCompactList}\small\item\em Performs the grain creation and playback in realtime ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+A structure for a gain\+\_\+scheduler object ~\newline
+ 
+
+\doxysubsubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{structgrain__scheduler_a5cc18341b62a949b465517458076a830}\label{structgrain__scheduler_a5cc18341b62a949b465517458076a830}} 
+\index{grain\_scheduler@{grain\_scheduler}!grain\_scheduler\_free@{grain\_scheduler\_free}}
+\index{grain\_scheduler\_free@{grain\_scheduler\_free}!grain\_scheduler@{grain\_scheduler}}
+\doxyparagraph{\texorpdfstring{grain\_scheduler\_free()}{grain\_scheduler\_free()}}
+{\footnotesize\ttfamily void grain\+\_\+scheduler\+\_\+free (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgrain__scheduler}{grain\+\_\+scheduler}} $\ast$}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Frees a \mbox{\hyperlink{structgrain__scheduler}{grain\+\_\+scheduler}} object ~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & My \mbox{\hyperlink{structgrain__scheduler}{grain\+\_\+scheduler}} object ~\newline
+ The function frees the allocated memory of a \mbox{\hyperlink{structgrain__scheduler}{grain\+\_\+scheduler}} object. ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structgrain__scheduler_a762c9a7e465d98ecd3465e55678882a0}\label{structgrain__scheduler_a762c9a7e465d98ecd3465e55678882a0}} 
+\index{grain\_scheduler@{grain\_scheduler}!grain\_scheduler\_new@{grain\_scheduler\_new}}
+\index{grain\_scheduler\_new@{grain\_scheduler\_new}!grain\_scheduler@{grain\_scheduler}}
+\doxyparagraph{\texorpdfstring{grain\_scheduler\_new()}{grain\_scheduler\_new()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structgrain__scheduler}{grain\+\_\+scheduler}} $\ast$ grain\+\_\+scheduler\+\_\+new (\begin{DoxyParamCaption}\item[{t\+\_\+word $\ast$}]{src\+\_\+sample,  }\item[{int}]{src\+\_\+sample\+\_\+length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Creates a new \mbox{\hyperlink{structgrain__scheduler}{grain\+\_\+scheduler}} object ~\newline
+ This function sets the source sample and its length for the ~\newline
+ \mbox{\hyperlink{structgrain__scheduler}{grain\+\_\+scheduler}} class. ~\newline
+ 
+
+\begin{DoxyReturn}{Returns}
+a pointer to the newly created \mbox{\hyperlink{structgrain__scheduler}{grain\+\_\+scheduler}} object ~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structgrain__scheduler_adfb2cc8a090fffaa95581504e5e5a3b9}\label{structgrain__scheduler_adfb2cc8a090fffaa95581504e5e5a3b9}} 
+\index{grain\_scheduler@{grain\_scheduler}!grain\_scheduler\_perform@{grain\_scheduler\_perform}}
+\index{grain\_scheduler\_perform@{grain\_scheduler\_perform}!grain\_scheduler@{grain\_scheduler}}
+\doxyparagraph{\texorpdfstring{grain\_scheduler\_perform()}{grain\_scheduler\_perform()}}
+{\footnotesize\ttfamily void grain\+\_\+scheduler\+\_\+perform (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgrain__scheduler}{grain\+\_\+scheduler}} $\ast$}]{x,  }\item[{int}]{sample\+\_\+pos,  }\item[{t\+\_\+sample $\ast$}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Performs the grain creation and playback in realtime ~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & My \mbox{\hyperlink{structgrain__scheduler}{grain\+\_\+scheduler}} \\
+\hline
+{\em sample\+\_\+pos} & The current position of the source sample around which grains ~\newline
+ are to be created and played back ~\newline
+ \\
+\hline
+{\em out} & The output vector ~\newline
+ The function grain\+\_\+scheduler\+\_\+perform creates and outputs grains according to user ~\newline
+ defined properties ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structgrain__scheduler_a84f78da9ca40723cb56878a2f5f3bfa4}\label{structgrain__scheduler_a84f78da9ca40723cb56878a2f5f3bfa4}} 
+\index{grain\_scheduler@{grain\_scheduler}!grain\_scheduler\_set\_props@{grain\_scheduler\_set\_props}}
+\index{grain\_scheduler\_set\_props@{grain\_scheduler\_set\_props}!grain\_scheduler@{grain\_scheduler}}
+\doxyparagraph{\texorpdfstring{grain\_scheduler\_set\_props()}{grain\_scheduler\_set\_props()}}
+{\footnotesize\ttfamily void grain\+\_\+scheduler\+\_\+set\+\_\+props (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgrain__scheduler}{grain\+\_\+scheduler}} $\ast$}]{x,  }\item[{int}]{offset,  }\item[{int}]{num\+\_\+grains,  }\item[{int}]{grain\+\_\+length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Sets the properties of the \mbox{\hyperlink{structgrain__scheduler}{grain\+\_\+scheduler}} object as defined by outside input. ~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & My \mbox{\hyperlink{structgrain__scheduler}{grain\+\_\+scheduler}} object ~\newline
+ \\
+\hline
+{\em offset} & The offset in which grains can be created ~\newline
+ \\
+\hline
+{\em num\+\_\+grains} & The number of grains which are to be created ~\newline
+ @þaram grain\+\_\+length The length of the grains to be created ~\newline
+ The function grain\+\_\+scheduler\+\_\+set\+\_\+props sets the parameters for grain creation at the ~\newline
+ beginning of the perform routine. It creates the array in which grains are stored ~\newline
+ and constructs grains if it is empty or grain size has been increased since the ~\newline
+ last time the perform routine was executed. ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{grain__scheduler_8h}{grain\+\_\+scheduler.\+h}}\end{DoxyCompactItemize}

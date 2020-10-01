@@ -1,0 +1,47 @@
+\hypertarget{grain__scheduler_8h}{}\doxysubsection{grain\+\_\+scheduler.\+h File Reference}
+\label{grain__scheduler_8h}\index{grain\_scheduler.h@{grain\_scheduler.h}}
+
+
+Object to handle the creation, deletion and scheduling of grains ~\newline
+ ~\newline
+ Grain\+\_\+scheduler manages all grains for the grainmaker$\sim$.c pd external. It constructs grains, ~\newline
+ sets the time between grains, and computes the output. ~\newline
+ ~\newline
+  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}m\+\_\+pd.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}grain.\+h\char`\"{}}\newline
+Include dependency graph for grain\+\_\+scheduler.\+h\+:
+% FIG 0
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structgrain__scheduler}{grain\+\_\+scheduler}}
+\begin{DoxyCompactList}\small\item\em A structure for a gain\+\_\+scheduler object ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{grain__scheduler_8h_a5d665fa9f85c217cf48a4b2dc0c2d93c}\label{grain__scheduler_8h_a5d665fa9f85c217cf48a4b2dc0c2d93c}} 
+typedef struct \mbox{\hyperlink{structgrain__scheduler}{grain\+\_\+scheduler}} {\bfseries grain\+\_\+scheduler}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Object to handle the creation, deletion and scheduling of grains ~\newline
+ ~\newline
+ Grain\+\_\+scheduler manages all grains for the grainmaker$\sim$.c pd external. It constructs grains, ~\newline
+ sets the time between grains, and computes the output. ~\newline
+ ~\newline
+ 
+
+\begin{DoxyAuthor}{Author}
+Peter Gorszo, Jonas Koerwer, Claudio Albrecht, Roman ~\newline
+ Audiocommunication Group, Technical University Berlin ~\newline
+ Real-\/time audio programming in C, So\+Se2020 ~\newline
+ A simple Grain sampler ~\newline
+ ~\newline
+ 
+\end{DoxyAuthor}
