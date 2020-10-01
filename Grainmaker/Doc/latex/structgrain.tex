@@ -1,5 +1,15 @@
 \hypertarget{structgrain}{}\doxysubsection{grain Struct Reference}
 \label{structgrain}\index{grain@{grain}}
+
+
+The struct of a grain ~\newline
+  
+
+
+
+
+{\ttfamily \#include $<$grain.\+h$>$}
+
 \doxysubsubsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
@@ -15,8 +25,50 @@ int {\bfseries current\+\_\+sample}
 \mbox{\Hypertarget{structgrain_a705be865716658545b73da2bbc1187a9}\label{structgrain_a705be865716658545b73da2bbc1187a9}} 
 int {\bfseries grain\+\_\+size}
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Related Functions}
+(Note that these are not member functions.) \begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structgrain}{grain}} \mbox{\hyperlink{structgrain_abdd03eb9139aee27e1fd8eab7e3532f3}{construct\+\_\+grain}} (int sample\+\_\+pos, int src\+\_\+sample\+\_\+length, int offset, int grain\+\_\+length)
+\begin{DoxyCompactList}\small\item\em Creates a grain to be used by \mbox{\hyperlink{structgrain__scheduler}{grain\+\_\+scheduler}} ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+The struct of a grain ~\newline
+ 
+
+\doxysubsubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{structgrain_abdd03eb9139aee27e1fd8eab7e3532f3}\label{structgrain_abdd03eb9139aee27e1fd8eab7e3532f3}} 
+\index{grain@{grain}!construct\_grain@{construct\_grain}}
+\index{construct\_grain@{construct\_grain}!grain@{grain}}
+\doxyparagraph{\texorpdfstring{construct\_grain()}{construct\_grain()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structgrain}{grain}} construct\+\_\+grain (\begin{DoxyParamCaption}\item[{int}]{sample\+\_\+pos,  }\item[{int}]{src\+\_\+sample\+\_\+length,  }\item[{int}]{offset,  }\item[{int}]{grain\+\_\+length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Creates a grain to be used by \mbox{\hyperlink{structgrain__scheduler}{grain\+\_\+scheduler}} ~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sample\+\_\+pos} & The position of the playhead as defined from outside. ~\newline
+ \\
+\hline
+{\em src\+\_\+sample\+\_\+length} & The length of the source sample ~\newline
+ @þaram offset The offset around sample\+\_\+pos in which grains can be constructed ~\newline
+ \\
+\hline
+{\em grain\+\_\+length} & The length of the individual grains The construct\+\_\+grain function creates grains in an area of the source sample that is defined by sample\+\_\+pos and offset. ~\newline
+ It sets all grain variables. ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A grain object ~\newline
+ 
+\end{DoxyReturn}
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-grain.\+h\end{DoxyCompactItemize}
+\mbox{\hyperlink{grain_8h}{grain.\+h}}\end{DoxyCompactItemize}

@@ -42,19 +42,6 @@ grain grain_new(int start_sample, int end_sample) {
     return x;
 }
 
-/**
- * @related grain
- * @brief Creates a grain to be used by grain_scheduler <br>
- * @param sample_pos The position of the playhead as defined from outside. <br>
- * @param src_sample_length The length of the source sample <br>
- * @þaram offset The offset around sample_pos in which grains can be constructed <br>
- * @param grain_length The length of the individual grains
- * The construct_grain function creates grains in an area of the source sample that is defined by sample_pos and offset. <br>
- * It sets all grain variables. <br>
- * @return A grain object <br>
- */
-
-
 grain construct_grain(int sample_pos, int src_sample_length, int offset, int grain_length){
     //calculates a range in which to create the grain
 	int range_start = sample_pos - offset;

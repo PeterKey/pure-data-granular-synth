@@ -1,0 +1,44 @@
+\hypertarget{grain_8c}{}\doxysubsection{grain.\+c File Reference}
+\label{grain_8c}\index{grain.c@{grain.c}}
+
+
+Functions to create grains for the \mbox{\hyperlink{structgrain__scheduler}{grain\+\_\+scheduler}} object. ~\newline
+ ~\newline
+ Grain includes the methods to initialize and construct individual grains. ~\newline
+ ~\newline
+  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}m\+\_\+pd.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}grain.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}grain\+\_\+scheduler.\+h\char`\"{}}\newline
+Include dependency graph for grain.\+c\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{grain_8c_ac3355a900e3f1c3bb42c8ca2482c1ce2}\label{grain_8c_ac3355a900e3f1c3bb42c8ca2482c1ce2}} 
+int {\bfseries minimum\+Int} (int a, int b)
+\item 
+\mbox{\Hypertarget{grain_8c_abdd03eb9139aee27e1fd8eab7e3532f3}\label{grain_8c_abdd03eb9139aee27e1fd8eab7e3532f3}} 
+\mbox{\hyperlink{structgrain}{grain}} {\bfseries construct\+\_\+grain} (int sample\+\_\+pos, int src\+\_\+sample\+\_\+length, int offset, int grain\+\_\+length)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Functions to create grains for the \mbox{\hyperlink{structgrain__scheduler}{grain\+\_\+scheduler}} object. ~\newline
+ ~\newline
+ Grain includes the methods to initialize and construct individual grains. ~\newline
+ ~\newline
+ 
+
+\begin{DoxyAuthor}{Author}
+Peter Gorszo, Jonas Koerwer, Claudio Albrecht, Roman Schweikert~\newline
+ Audiocommunication Group, Technical University Berlin ~\newline
+ Real-\/time audio programming in C, So\+Se2020 ~\newline
+ A simple Grain sampler ~\newline
+ ~\newline
+ 
+\end{DoxyAuthor}

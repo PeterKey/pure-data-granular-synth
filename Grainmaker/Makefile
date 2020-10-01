@@ -24,8 +24,6 @@ buildcheck: all
 		test -e grainmaker~.$(extension)
 installcheck: install
 		test -e $(installpath)/grainmaker~.$(extension)
-
-CFLAGS = -g
 		
 DESTDIR = ./build
 installpath :=$(DESTDIR)/$(lib.name)

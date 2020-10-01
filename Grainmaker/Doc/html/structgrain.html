@@ -62,11 +62,18 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Data Fields</a>  </div>
+<a href="#pub-attribs">Data Fields</a> &#124;
+<a href="#related">Related Functions</a>  </div>
   <div class="headertitle">
 <div class="title">grain Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>The struct of a grain <br  />
+  
+ <a href="structgrain.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="grain_8h_source.html">grain.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
@@ -82,7 +89,86 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>current_sample</b></td
 <tr class="memitem:a705be865716658545b73da2bbc1187a9"><td class="memItemLeft" align="right" valign="top"><a id="a705be865716658545b73da2bbc1187a9"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>grain_size</b></td></tr>
 <tr class="separator:a705be865716658545b73da2bbc1187a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="related"></a>
+Related Functions</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p>(Note that these are not member functions.) </p>
+</td></tr>
+<tr class="memitem:abdd03eb9139aee27e1fd8eab7e3532f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgrain.html">grain</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgrain.html#abdd03eb9139aee27e1fd8eab7e3532f3">construct_grain</a> (int sample_pos, int src_sample_length, int offset, int grain_length)</td></tr>
+<tr class="memdesc:abdd03eb9139aee27e1fd8eab7e3532f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a grain to be used by <a class="el" href="structgrain__scheduler.html" title="A structure for a gain_scheduler object">grain_scheduler</a> <br  />
+  <a href="structgrain.html#abdd03eb9139aee27e1fd8eab7e3532f3">More...</a><br /></td></tr>
+<tr class="separator:abdd03eb9139aee27e1fd8eab7e3532f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The struct of a grain <br  />
+ </p>
+</div><h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="abdd03eb9139aee27e1fd8eab7e3532f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdd03eb9139aee27e1fd8eab7e3532f3">&#9670;&nbsp;</a></span>construct_grain()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structgrain.html">grain</a> construct_grain </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sample_pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>src_sample_length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>grain_length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">related</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a grain to be used by <a class="el" href="structgrain__scheduler.html" title="A structure for a gain_scheduler object">grain_scheduler</a> <br  />
+ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sample_pos</td><td>The position of the playhead as defined from outside. <br  />
+ </td></tr>
+    <tr><td class="paramname">src_sample_length</td><td>The length of the source sample <br  />
+ @þaram offset The offset around sample_pos in which grains can be constructed <br  />
+ </td></tr>
+    <tr><td class="paramname">grain_length</td><td>The length of the individual grains The construct_grain function creates grains in an area of the source sample that is defined by sample_pos and offset. <br  />
+ It sets all grain variables. <br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A grain object <br  />
+ </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="grain_8h_source.html">grain.h</a></li>
 </ul>
