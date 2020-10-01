@@ -1,4 +1,4 @@
-#N canvas 331 64 1053 703 12;
+#N canvas 299 96 1053 703 12;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array array1 1.04858e+06 float 2;
 #X coords 0 1 1.04858e+06 -1 200 140 1;
@@ -15,7 +15,7 @@
 #X obj 347 336 *~;
 #X msg 32 271 read -resize sing.wav array1;
 #X obj 350 298 hsl 135 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 6500 1;
 #X floatatom 347 316 5 0 0 0 - - -;
 #X msg 151 604 num_grains 10;
 #X msg 261 604 grain_length 44100;

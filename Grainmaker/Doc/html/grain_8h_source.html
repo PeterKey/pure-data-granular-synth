@@ -84,17 +84,17 @@ $(function() {
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * @struct grain</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * @brief The struct of a grain &lt;br&gt;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * @var start_sample The position in the source sample where the grain starts &lt;br&gt;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> * @var end_sample  The position in the source sample where the grain ends &lt;br&gt;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * @var current_sample The position in the source sample where the grain is currently playing &lt;br&gt;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * @var grain_size The size of the grain, calculated by substracting start_sample from end_sample &lt;br&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * @var start_sample  &lt;br&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> * @var end_sample   &lt;br&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * @var current_sample &lt;br&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * @var grain_size  &lt;br&gt;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
 <div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="structgrain.html">   26</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structgrain.html">grain</a> {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">int</span> start_sample,</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        end_sample,</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        current_sample,</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        grain_size;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="structgrain.html#a325daf18675852cf29ed7b9206df060b">   27</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structgrain.html#a325daf18675852cf29ed7b9206df060b">start_sample</a>, <span class="comment">/**&lt;The position in the source sample where the grain starts */</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="structgrain.html#a149cec5901fe22e856752c30d6301352">   28</a></span>&#160;        <a class="code" href="structgrain.html#a149cec5901fe22e856752c30d6301352">end_sample</a>, <span class="comment">/**&lt;The position in the source sample where the grain ends */</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="structgrain.html#aa10688a7f2b7c0e1fcac4ebd3f520034">   29</a></span>&#160;        <a class="code" href="structgrain.html#aa10688a7f2b7c0e1fcac4ebd3f520034">current_sample</a>, <span class="comment">/**&lt;The position in the source sample where the grain is currently playing  */</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="structgrain.html#a705be865716658545b73da2bbc1187a9">   30</a></span>&#160;        <a class="code" href="structgrain.html#a705be865716658545b73da2bbc1187a9">grain_size</a>; <span class="comment">/**&lt;The size of the grain, calculated by subtracting start_sample from end_sample */</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}<a class="code" href="structgrain.html">grain</a>;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">/**</span></div>
@@ -113,6 +113,10 @@ $(function() {
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* grain_h */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astructgrain_html_a149cec5901fe22e856752c30d6301352"><div class="ttname"><a href="structgrain.html#a149cec5901fe22e856752c30d6301352">grain::end_sample</a></div><div class="ttdeci">int end_sample</div><div class="ttdef"><b>Definition:</b> grain.h:28</div></div>
+<div class="ttc" id="astructgrain_html_a705be865716658545b73da2bbc1187a9"><div class="ttname"><a href="structgrain.html#a705be865716658545b73da2bbc1187a9">grain::grain_size</a></div><div class="ttdeci">int grain_size</div><div class="ttdef"><b>Definition:</b> grain.h:30</div></div>
+<div class="ttc" id="astructgrain_html_a325daf18675852cf29ed7b9206df060b"><div class="ttname"><a href="structgrain.html#a325daf18675852cf29ed7b9206df060b">grain::start_sample</a></div><div class="ttdeci">int start_sample</div><div class="ttdef"><b>Definition:</b> grain.h:27</div></div>
+<div class="ttc" id="astructgrain_html_aa10688a7f2b7c0e1fcac4ebd3f520034"><div class="ttname"><a href="structgrain.html#aa10688a7f2b7c0e1fcac4ebd3f520034">grain::current_sample</a></div><div class="ttdeci">int current_sample</div><div class="ttdef"><b>Definition:</b> grain.h:29</div></div>
 <div class="ttc" id="astructgrain_html"><div class="ttname"><a href="structgrain.html">grain</a></div><div class="ttdoc">The struct of a grain</div><div class="ttdef"><b>Definition:</b> grain.h:26</div></div>
 <div class="ttc" id="astructgrain_html_abdd03eb9139aee27e1fd8eab7e3532f3"><div class="ttname"><a href="structgrain.html#abdd03eb9139aee27e1fd8eab7e3532f3">grain::construct_grain</a></div><div class="ttdeci">grain construct_grain(int sample_pos, int src_sample_length, int offset, int grain_length)</div><div class="ttdoc">Creates a grain to be used by grain_scheduler</div></div>
 <!-- start footer part -->

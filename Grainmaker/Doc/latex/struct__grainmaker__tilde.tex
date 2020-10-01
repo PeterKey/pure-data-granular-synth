@@ -2,6 +2,12 @@
 \label{struct__grainmaker__tilde}\index{\_grainmaker\_tilde@{\_grainmaker\_tilde}}
 
 
+A structure for a grainmaker$\sim$ object ~\newline
+  
+
+
+
+
 Collaboration diagram for \+\_\+grainmaker\+\_\+tilde\+:
 % FIG 0
 \doxysubsubsection*{Data Fields}
@@ -46,6 +52,204 @@ t\+\_\+inlet $\ast$ {\bfseries in\+\_\+grain\+\_\+length}
 \mbox{\Hypertarget{struct__grainmaker__tilde_ab7ecdb9abdf0fb50af6dd7945de52ac3}\label{struct__grainmaker__tilde_ab7ecdb9abdf0fb50af6dd7945de52ac3}} 
 t\+\_\+outlet $\ast$ {\bfseries out}
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Related Functions}
+(Note that these are not member functions.) \begin{DoxyCompactItemize}
+\item 
+void $\ast$ \mbox{\hyperlink{struct__grainmaker__tilde_a477b24995b2a2d1c9003f236d4d3039c}{grainmaker\+\_\+tilde\+\_\+new}} (t\+\_\+symbol $\ast$arrayname)
+\begin{DoxyCompactList}\small\item\em Creates new grainmaker object ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct__grainmaker__tilde_a2e9888068583bfad4d8bf7b8deaf16a8}{grainmaker\+\_\+tilde\+\_\+free}} (\mbox{\hyperlink{struct__grainmaker__tilde}{t\+\_\+grainmaker\+\_\+tilde}} $\ast$x)
+\begin{DoxyCompactList}\small\item\em Frees grainmaker object ~\newline
+ \end{DoxyCompactList}\item 
+static t\+\_\+int $\ast$ \mbox{\hyperlink{struct__grainmaker__tilde_a9b3e7ba75fdcb221715f53d7e2314b84}{grainmaker\+\_\+tilde\+\_\+perform}} (t\+\_\+int $\ast$w)
+\begin{DoxyCompactList}\small\item\em Performs grainmaker tilde ~\newline
+ \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{struct__grainmaker__tilde_a61b28235942fd55393598dcc9f31031a}{grainmaker\+\_\+tilde\+\_\+set}} (\mbox{\hyperlink{struct__grainmaker__tilde}{t\+\_\+grainmaker\+\_\+tilde}} $\ast$x)
+\begin{DoxyCompactList}\small\item\em Sets the array to read from ~\newline
+ \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{struct__grainmaker__tilde_a116940f21316a5ff123bedc283843cfb}{grainmaker\+\_\+tilde\+\_\+dsp}} (\mbox{\hyperlink{struct__grainmaker__tilde}{t\+\_\+grainmaker\+\_\+tilde}} $\ast$x, t\+\_\+signal $\ast$$\ast$sp)
+\begin{DoxyCompactList}\small\item\em Sets up the grainmaker tilde for use as a dsp ~\newline
+ \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{struct__grainmaker__tilde_a54f6e4aef136522033bea66467856fd8}{grainmaker\+\_\+tilde\+\_\+set\+\_\+offset}} (\mbox{\hyperlink{struct__grainmaker__tilde}{t\+\_\+grainmaker\+\_\+tilde}} $\ast$x, t\+\_\+floatarg f)
+\begin{DoxyCompactList}\small\item\em Reacts to inlet changes of offset ~\newline
+ \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{struct__grainmaker__tilde_a869c084e4371af3db069f99c5d743820}{grainmaker\+\_\+tilde\+\_\+set\+\_\+num\+\_\+grains}} (\mbox{\hyperlink{struct__grainmaker__tilde}{t\+\_\+grainmaker\+\_\+tilde}} $\ast$x, t\+\_\+floatarg f)
+\begin{DoxyCompactList}\small\item\em Reacts to inlet changes of num\+\_\+grains ~\newline
+ \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{struct__grainmaker__tilde_ab3abd5f059517757e2d4920b4e865a95}{grainmaker\+\_\+tilde\+\_\+set\+\_\+grain\+\_\+length}} (\mbox{\hyperlink{struct__grainmaker__tilde}{t\+\_\+grainmaker\+\_\+tilde}} $\ast$x, t\+\_\+floatarg f)
+\begin{DoxyCompactList}\small\item\em Reacts to inlet changes of grain\+\_\+length ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct__grainmaker__tilde_ae8a1b18ae45598b53e88966bb9ec5880}\label{struct__grainmaker__tilde_ae8a1b18ae45598b53e88966bb9ec5880}} 
+void \mbox{\hyperlink{struct__grainmaker__tilde_ae8a1b18ae45598b53e88966bb9ec5880}{grainmaker\+\_\+tilde\+\_\+setup}} (void)
+\begin{DoxyCompactList}\small\item\em Sets up grainmaker as a pd external ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+A structure for a grainmaker$\sim$ object ~\newline
+ 
+
+\doxysubsubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{struct__grainmaker__tilde_a116940f21316a5ff123bedc283843cfb}\label{struct__grainmaker__tilde_a116940f21316a5ff123bedc283843cfb}} 
+\index{\_grainmaker\_tilde@{\_grainmaker\_tilde}!grainmaker\_tilde\_dsp@{grainmaker\_tilde\_dsp}}
+\index{grainmaker\_tilde\_dsp@{grainmaker\_tilde\_dsp}!\_grainmaker\_tilde@{\_grainmaker\_tilde}}
+\doxyparagraph{\texorpdfstring{grainmaker\_tilde\_dsp()}{grainmaker\_tilde\_dsp()}}
+{\footnotesize\ttfamily static void grainmaker\+\_\+tilde\+\_\+dsp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__grainmaker__tilde}{t\+\_\+grainmaker\+\_\+tilde}} $\ast$}]{x,  }\item[{t\+\_\+signal $\ast$$\ast$}]{sp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Sets up the grainmaker tilde for use as a dsp ~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & grainmaker tilde object~\newline
+ \\
+\hline
+{\em sp} & the input signal vector ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct__grainmaker__tilde_a2e9888068583bfad4d8bf7b8deaf16a8}\label{struct__grainmaker__tilde_a2e9888068583bfad4d8bf7b8deaf16a8}} 
+\index{\_grainmaker\_tilde@{\_grainmaker\_tilde}!grainmaker\_tilde\_free@{grainmaker\_tilde\_free}}
+\index{grainmaker\_tilde\_free@{grainmaker\_tilde\_free}!\_grainmaker\_tilde@{\_grainmaker\_tilde}}
+\doxyparagraph{\texorpdfstring{grainmaker\_tilde\_free()}{grainmaker\_tilde\_free()}}
+{\footnotesize\ttfamily void grainmaker\+\_\+tilde\+\_\+free (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__grainmaker__tilde}{t\+\_\+grainmaker\+\_\+tilde}} $\ast$}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Frees grainmaker object ~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & grainmaker object~\newline
+ Free the grainmaker object ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct__grainmaker__tilde_a477b24995b2a2d1c9003f236d4d3039c}\label{struct__grainmaker__tilde_a477b24995b2a2d1c9003f236d4d3039c}} 
+\index{\_grainmaker\_tilde@{\_grainmaker\_tilde}!grainmaker\_tilde\_new@{grainmaker\_tilde\_new}}
+\index{grainmaker\_tilde\_new@{grainmaker\_tilde\_new}!\_grainmaker\_tilde@{\_grainmaker\_tilde}}
+\doxyparagraph{\texorpdfstring{grainmaker\_tilde\_new()}{grainmaker\_tilde\_new()}}
+{\footnotesize\ttfamily void $\ast$ grainmaker\+\_\+tilde\+\_\+new (\begin{DoxyParamCaption}\item[{t\+\_\+symbol $\ast$}]{arrayname }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Creates new grainmaker object ~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arrayname} & Name of the provided array used as a source sample ~\newline
+ Create new grainmaker\+\_\+tilde object ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to grainmaker object ~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct__grainmaker__tilde_a9b3e7ba75fdcb221715f53d7e2314b84}\label{struct__grainmaker__tilde_a9b3e7ba75fdcb221715f53d7e2314b84}} 
+\index{\_grainmaker\_tilde@{\_grainmaker\_tilde}!grainmaker\_tilde\_perform@{grainmaker\_tilde\_perform}}
+\index{grainmaker\_tilde\_perform@{grainmaker\_tilde\_perform}!\_grainmaker\_tilde@{\_grainmaker\_tilde}}
+\doxyparagraph{\texorpdfstring{grainmaker\_tilde\_perform()}{grainmaker\_tilde\_perform()}}
+{\footnotesize\ttfamily static t\+\_\+int $\ast$ grainmaker\+\_\+tilde\+\_\+perform (\begin{DoxyParamCaption}\item[{t\+\_\+int $\ast$}]{w }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Performs grainmaker tilde ~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & signal input~\newline
+ Performs grainmaker tilde ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns output signal ~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct__grainmaker__tilde_a61b28235942fd55393598dcc9f31031a}\label{struct__grainmaker__tilde_a61b28235942fd55393598dcc9f31031a}} 
+\index{\_grainmaker\_tilde@{\_grainmaker\_tilde}!grainmaker\_tilde\_set@{grainmaker\_tilde\_set}}
+\index{grainmaker\_tilde\_set@{grainmaker\_tilde\_set}!\_grainmaker\_tilde@{\_grainmaker\_tilde}}
+\doxyparagraph{\texorpdfstring{grainmaker\_tilde\_set()}{grainmaker\_tilde\_set()}}
+{\footnotesize\ttfamily static void grainmaker\+\_\+tilde\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__grainmaker__tilde}{t\+\_\+grainmaker\+\_\+tilde}} $\ast$}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Sets the array to read from ~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & grainmaker tilde object~\newline
+ Sets the array to use as a sample ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct__grainmaker__tilde_ab3abd5f059517757e2d4920b4e865a95}\label{struct__grainmaker__tilde_ab3abd5f059517757e2d4920b4e865a95}} 
+\index{\_grainmaker\_tilde@{\_grainmaker\_tilde}!grainmaker\_tilde\_set\_grain\_length@{grainmaker\_tilde\_set\_grain\_length}}
+\index{grainmaker\_tilde\_set\_grain\_length@{grainmaker\_tilde\_set\_grain\_length}!\_grainmaker\_tilde@{\_grainmaker\_tilde}}
+\doxyparagraph{\texorpdfstring{grainmaker\_tilde\_set\_grain\_length()}{grainmaker\_tilde\_set\_grain\_length()}}
+{\footnotesize\ttfamily static void grainmaker\+\_\+tilde\+\_\+set\+\_\+grain\+\_\+length (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__grainmaker__tilde}{t\+\_\+grainmaker\+\_\+tilde}} $\ast$}]{x,  }\item[{t\+\_\+floatarg}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Reacts to inlet changes of grain\+\_\+length ~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & grainmaker tilde object~\newline
+ \\
+\hline
+{\em f} & new value of grain\+\_\+length ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct__grainmaker__tilde_a869c084e4371af3db069f99c5d743820}\label{struct__grainmaker__tilde_a869c084e4371af3db069f99c5d743820}} 
+\index{\_grainmaker\_tilde@{\_grainmaker\_tilde}!grainmaker\_tilde\_set\_num\_grains@{grainmaker\_tilde\_set\_num\_grains}}
+\index{grainmaker\_tilde\_set\_num\_grains@{grainmaker\_tilde\_set\_num\_grains}!\_grainmaker\_tilde@{\_grainmaker\_tilde}}
+\doxyparagraph{\texorpdfstring{grainmaker\_tilde\_set\_num\_grains()}{grainmaker\_tilde\_set\_num\_grains()}}
+{\footnotesize\ttfamily static void grainmaker\+\_\+tilde\+\_\+set\+\_\+num\+\_\+grains (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__grainmaker__tilde}{t\+\_\+grainmaker\+\_\+tilde}} $\ast$}]{x,  }\item[{t\+\_\+floatarg}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Reacts to inlet changes of num\+\_\+grains ~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & grainmaker tilde object~\newline
+ \\
+\hline
+{\em f} & new value of num\+\_\+grains ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct__grainmaker__tilde_a54f6e4aef136522033bea66467856fd8}\label{struct__grainmaker__tilde_a54f6e4aef136522033bea66467856fd8}} 
+\index{\_grainmaker\_tilde@{\_grainmaker\_tilde}!grainmaker\_tilde\_set\_offset@{grainmaker\_tilde\_set\_offset}}
+\index{grainmaker\_tilde\_set\_offset@{grainmaker\_tilde\_set\_offset}!\_grainmaker\_tilde@{\_grainmaker\_tilde}}
+\doxyparagraph{\texorpdfstring{grainmaker\_tilde\_set\_offset()}{grainmaker\_tilde\_set\_offset()}}
+{\footnotesize\ttfamily static void grainmaker\+\_\+tilde\+\_\+set\+\_\+offset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__grainmaker__tilde}{t\+\_\+grainmaker\+\_\+tilde}} $\ast$}]{x,  }\item[{t\+\_\+floatarg}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Reacts to inlet changes of offset ~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & grainmaker tilde object~\newline
+ \\
+\hline
+{\em f} & new value of offset ~\newline
+ \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
