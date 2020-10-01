@@ -17,17 +17,17 @@
 /**
  * @struct grain
  * @brief The struct of a grain <br>
- * @var start_sample The position in the source sample where the grain starts <br>
- * @var end_sample  The position in the source sample where the grain ends <br>
- * @var current_sample The position in the source sample where the grain is currently playing <br>
- * @var grain_size The size of the grain, calculated by substracting start_sample from end_sample <br>
+ * @var start_sample  <br>
+ * @var end_sample   <br>
+ * @var current_sample <br>
+ * @var grain_size  <br>
  */
 
 typedef struct grain {
-    int start_sample,
-        end_sample,
-        current_sample,
-        grain_size;
+    int start_sample, /**<The position in the source sample where the grain starts */
+        end_sample, /**<The position in the source sample where the grain ends */
+        current_sample, /**<The position in the source sample where the grain is currently playing  */
+        grain_size; /**<The size of the grain, calculated by subtracting start_sample from end_sample */
 }grain;
 
 /**
