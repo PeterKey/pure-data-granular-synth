@@ -1,6 +1,6 @@
 /**
 *@file grain.h
-*@author Peter Gorszo, Jonas Koerwer, Claudio Albrecht, Roman Schweikert<br>
+*@author Peter Gorzo, Jonas Koerwer, Claudio Albrecht, Roman Schweikert<br>
 *Audiocommunication Group, Technical University Berlin <br>
 *Real-time audio programming in C, SoSe2020 <br>
 *A simple Grain sampler <br>
@@ -17,10 +17,10 @@
 /**
  * @struct grain
  * @brief The struct of a grain <br>
- * @var grain::start_sample The position in the source sample where the grain starts <br>
- * @var grain::end_sample  The position in the source sample where the grain ends <br>
- * @var grain::current_sample The position in the source sample where the grain is currently playing <br>
- * @var grain::grain_size The size of the grain, calculated by substracting start_sample from end_sample <br>
+ * @var start_sample The position in the source sample where the grain starts <br>
+ * @var end_sample  The position in the source sample where the grain ends <br>
+ * @var current_sample The position in the source sample where the grain is currently playing <br>
+ * @var grain_size The size of the grain, calculated by substracting start_sample from end_sample <br>
  */
 
 typedef struct grain {

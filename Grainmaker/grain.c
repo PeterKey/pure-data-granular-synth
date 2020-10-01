@@ -1,6 +1,6 @@
 /**
 *@file grain.c
-*@author Peter Gorszo, Jonas Koerwer, Claudio Albrecht, Roman Schweikert<br>
+*@author Peter Gorzo, Jonas Koerwer, Claudio Albrecht, Roman Schweikert<br>
 *Audiocommunication Group, Technical University Berlin <br>
 *Real-time audio programming in C, SoSe2020 <br>
 *A simple Grain sampler <br>
